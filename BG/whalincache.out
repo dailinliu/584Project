@@ -1,0 +1,15 @@
+0    ERROR [main]       com.meetup.memcached.SockIOPool     - ++++ failed to get SockIO obj for: 127.0.0.1:11211
+2    ERROR [main]       com.meetup.memcached.SockIOPool     - Connection refused
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:117)
+	at com.meetup.memcached.SockIOPool$SockIO.getSocket(Unknown Source)
+	at com.meetup.memcached.SockIOPool$SockIO.<init>(Unknown Source)
+	at com.meetup.memcached.SockIOPool.createSocket(Unknown Source)
+	at com.meetup.memcached.SockIOPool.populateBuckets(Unknown Source)
+	at com.meetup.memcached.SockIOPool.initialize(Unknown Source)
+	at memcached.WhalinMemcachedBGClient.init(Unknown Source)
+	at edu.usc.bg.base.DBWrapper.init(Unknown Source)
+	at edu.usc.bg.base.Client.main(Unknown Source)
+3    ERROR [main]       com.meetup.memcached.SockIOPool     - ++++ failed to create connection to: 127.0.0.1:11211 -- only 0 created.
