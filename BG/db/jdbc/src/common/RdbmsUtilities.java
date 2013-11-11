@@ -209,75 +209,112 @@ private static final boolean verbose = false;
 			//stmt.executeUpdate("CREATE SEQUENCE  USERIDINC  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ");
 			//stmt.executeUpdate("CREATE SEQUENCE  USERIDS  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE");
 
-			stmt.executeUpdate("CREATE TABLE FRIENDSHIP"
+			/*stmt.executeUpdate("CREATE TABLE FRIENDSHIP"
 					+ "(INVITERID NUMBER, INVITEEID NUMBER,"
-					+ "STATUS NUMBER DEFAULT 1" + ") NOLOGGING");
+					+ "STATUS NUMBER DEFAULT 1" + ") NOLOGGING");*/
+            stmt.executeUpdate("CREATE TABLE FRIENDSHIP"
+                               + "(INVITERID INT, INVITEEID INT,"
+                               + "STATUS INT NOT NULL default 1)");
 			System.out.println("Table friendship created");
-			stmt.executeUpdate("CREATE TABLE MANIPULATION"
+			/*stmt.executeUpdate("CREATE TABLE MANIPULATION"
 					+ "(	MID NUMBER," + "CREATORID NUMBER, RID NUMBER,"
 					+ "MODIFIERID NUMBER, TIMESTAMP VARCHAR2(200),"
 					+ "TYPE VARCHAR2(200), CONTENT VARCHAR2(200)"
-					+ ") NOLOGGING");
+					+ ") NOLOGGING");*/
+            stmt.executeUpdate("CREATE TABLE MANIPULATION"
+                               + "(MID INT," + "CREATORID INT, RID INT,"
+                               + "MODIFIERID INT, TIMESTAMP VARCHAR(200),"
+                               + "TYPE VARCHAR(200), CONTENT VARCHAR(200) )");
+            System.out.println("Table manipulation created");
 
-			stmt.executeUpdate("CREATE TABLE RESOURCES"
+			/*stmt.executeUpdate("CREATE TABLE RESOURCES"
 					+ "(	RID NUMBER,CREATORID NUMBER,"
 					+ "WALLUSERID NUMBER, TYPE VARCHAR2(200),"
 					+ "BODY VARCHAR2(200), DOC VARCHAR2(200)"
-					+ ") NOLOGGING");
+					+ ") NOLOGGING");*/
+            stmt.executeUpdate("CREATE TABLE RESOURCES"
+                               + "(RID INT,CREATORID INT,"
+                               + "WALLUSERID INT, TYPE VARCHAR(200),"
+                               + "BODY VARCHAR(200), DOC VARCHAR(200)"
+                               + ")");
+            System.out.println("Table resources created");
+            
 
 			if (Boolean.parseBoolean(props.getProperty(Client.INSERT_IMAGE_PROPERTY,
 					Client.INSERT_IMAGE_PROPERTY_DEFAULT))) {
-				stmt.executeUpdate("CREATE TABLE USERS"
+				/*stmt.executeUpdate("CREATE TABLE USERS"
 						+ "(USERID NUMBER, USERNAME VARCHAR2(200), "
 						+ "PW VARCHAR2(200), FNAME VARCHAR2(200), "
 						+ "LNAME VARCHAR2(200), GENDER VARCHAR2(200),"
 						+ "DOB VARCHAR2(200),JDATE VARCHAR2(200), "
 						+ "LDATE VARCHAR2(200), ADDRESS VARCHAR2(200),"
 						+ "EMAIL VARCHAR2(200), TEL VARCHAR2(200), PIC BLOB, TPIC BLOB"
-						+ ") NOLOGGING");
+						+ ") NOLOGGING");*/
+                stmt.executeUpdate("CREATE TABLE USERS"
+                                   + "(USERID INT, USERNAME VARCHAR(200), "
+                                   + "PW VARCHAR(200), FNAME VARCHAR(200), "
+                                   + "LNAME VARCHAR(200), GENDER VARCHAR(200),"
+                                   + "DOB VARCHAR(200),JDATE VARCHAR(200), "
+                                   + "LDATE VARCHAR(200), ADDRESS VARCHAR(200),"
+                                   + "EMAIL VARCHAR(200), TEL VARCHAR(200), PIC BLOB, TPIC BLOB"
+                                   + ")");
+                System.out.println("Table user created");
 			} else {
-				stmt.executeUpdate("CREATE TABLE USERS"
+				/*stmt.executeUpdate("CREATE TABLE USERS"
 						+ "(USERID NUMBER, USERNAME VARCHAR2(200), "
 						+ "PW VARCHAR2(200), FNAME VARCHAR2(200), "
 						+ "LNAME VARCHAR2(200), GENDER VARCHAR2(200),"
 						+ "DOB VARCHAR2(200),JDATE VARCHAR2(200), "
 						+ "LDATE VARCHAR2(200), ADDRESS VARCHAR2(200),"
 						+ "EMAIL VARCHAR2(200), TEL VARCHAR2(200)"
-						+ ") NOLOGGING");
+						+ ") NOLOGGING");*/
+                stmt.executeUpdate("CREATE TABLE USERS"
+                                   + "(USERID INT, USERNAME VARCHAR(200), "
+                                   + "PW VARCHAR(200), FNAME VARCHAR(200), "
+                                   + "LNAME VARCHAR(200), GENDER VARCHAR(200),"
+                                   + "DOB VARCHAR(200),JDATE VARCHAR(200), "
+                                   + "LDATE VARCHAR(200), ADDRESS VARCHAR(200),"
+                                   + "EMAIL VARCHAR(200), TEL VARCHAR(200)"
+                                   + ")");
 
 			}
 
-			stmt.executeUpdate("ALTER TABLE USERS MODIFY (USERID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE USERS ADD CONSTRAINT USERS_PK PRIMARY KEY (USERID) ENABLE");
-			stmt.executeUpdate("ALTER TABLE MANIPULATION ADD CONSTRAINT MANIPULATION_PK PRIMARY KEY (MID,RID) ENABLE");
-			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY (MID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY (CREATORID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY (RID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY (MODIFIERID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE FRIENDSHIP ADD CONSTRAINT FRIENDSHIP_PK PRIMARY KEY (INVITERID, INVITEEID) ENABLE");
-			stmt.executeUpdate("ALTER TABLE FRIENDSHIP MODIFY (INVITERID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE FRIENDSHIP MODIFY (INVITEEID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE RESOURCES ADD CONSTRAINT RESOURCES_PK PRIMARY KEY (RID) ENABLE");
-			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY (RID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY (CREATORID NOT NULL ENABLE)");
-			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY (WALLUSERID NOT NULL ENABLE)");
+			stmt.executeUpdate("ALTER TABLE USERS MODIFY USERID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE USERS ADD CONSTRAINT USERS_PK PRIMARY KEY (USERID)"); //?
+			stmt.executeUpdate("ALTER TABLE MANIPULATION ADD CONSTRAINT MANIPULATION_PK PRIMARY KEY (MID,RID)"); //?
+			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY MID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY CREATORID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY RID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE MANIPULATION MODIFY MODIFIERID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE FRIENDSHIP ADD CONSTRAINT FRIENDSHIP_PK PRIMARY KEY (INVITERID, INVITEEID)");
+			stmt.executeUpdate("ALTER TABLE FRIENDSHIP MODIFY INVITERID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE FRIENDSHIP MODIFY INVITEEID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE RESOURCES ADD CONSTRAINT RESOURCES_PK PRIMARY KEY (RID)");
+			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY RID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY CREATORID INT NOT NULL");
+			stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY WALLUSERID INT NOT NULL");
 			stmt.executeUpdate("ALTER TABLE FRIENDSHIP ADD CONSTRAINT FRIENDSHIP_USERS_FK1 FOREIGN KEY (INVITERID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");//?
 			stmt.executeUpdate("ALTER TABLE FRIENDSHIP ADD CONSTRAINT FRIENDSHIP_USERS_FK2 FOREIGN KEY (INVITEEID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");
 			stmt.executeUpdate("ALTER TABLE MANIPULATION ADD CONSTRAINT MANIPULATION_RESOURCES_FK1 FOREIGN KEY (RID)"
-					+ "REFERENCES RESOURCES (RID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES RESOURCES (RID) ON DELETE CASCADE");
 			stmt.executeUpdate("ALTER TABLE MANIPULATION ADD CONSTRAINT MANIPULATION_USERS_FK1 FOREIGN KEY (CREATORID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");
 			stmt.executeUpdate("ALTER TABLE MANIPULATION ADD CONSTRAINT MANIPULATION_USERS_FK2 FOREIGN KEY (MODIFIERID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");
 			stmt.executeUpdate("ALTER TABLE RESOURCES ADD CONSTRAINT RESOURCES_USERS_FK1 FOREIGN KEY (CREATORID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");
 			stmt.executeUpdate("ALTER TABLE RESOURCES ADD CONSTRAINT RESOURCES_USERS_FK2 FOREIGN KEY (WALLUSERID)"
-					+ "REFERENCES USERS (USERID) ON DELETE CASCADE ENABLE");
+					+ "REFERENCES USERS (USERID) ON DELETE CASCADE");
+            
+            //stmt.executeUpdate("ALTER TABLE USERS MODIFY USERIDINC INT NOT NULL AUTO_INCREMENT");
+            //stmt.executeUpdate("ALTER TABLE USERS AUTO_INCREMENT = 1;");
+            //stmt.executeUpdate("ALTER TABLE RESOURCES MODIFY RIDINC INT NOT NULL AUTO_INCREMENT");
+            //stmt.executeUpdate("ALTER TABLE RESOURCES AUTO_INCREMENT = 1;");
 		
 
-			stmt.executeUpdate("CREATE OR REPLACE TRIGGER RINC before insert on resources "
+			/*stmt.executeUpdate("CREATE OR REPLACE TRIGGER RINC before insert on resources "
 					+ "for each row "
 					+ "WHEN (new.rid is null) begin "
 					+ "select ridInc.nextval into :new.rid from dual;"
@@ -289,7 +326,7 @@ private static final boolean verbose = false;
 					+ "WHEN (new.userid is null) begin "
 					+ "select useridInc.nextval into :new.userid from dual;"
 					+ "end;");
-			stmt.executeUpdate("ALTER TRIGGER UINC ENABLE");
+			stmt.executeUpdate("ALTER TRIGGER UINC ENABLE");*/
 			
 			dropIndex(stmt, "RESOURCE_CREATORID");
 			dropIndex(stmt, "RESOURCES_WALLUSERID");
