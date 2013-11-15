@@ -1,0 +1,293 @@
+22a23
+> #include <sys/timeb.h>
+96a98,99
+> /* get system time, millisecond. */
+> static long long getSystemTime();
+110a114,117
+> /* Delta time for gumball life cycle. */
+> static const gum_time_t delta_time = 500;
+> /* When gumball expires. */
+> static const rel_time_t expire_time = 1;
+120a128,137
+> static gum_time_t getSystemTime() 
+> {
+>     struct timeb t;
+>     ftime(&t);
+>     fprintf(stdout, "Time = %u Milli = %u\n", (rel_time_t)t.time, t.millitm);
+>     gum_time_t currenttime = 1000 * (gum_time_t)t.time + t.millitm;
+>     fprintf(stdout, "Time = %lld\n", currenttime);
+>     return currenttime;
+> }
+> 
+228d244
+<     settings.shutdown_command = false;
+2385a2402,2403
+> /* For PUT operation in gumball, the last token should be miss time. */
+> #define MISS_TIME_TOKEN 5
+2730c2748,2749
+<             if (it) {
+---
+>             /* No cache miss nor gumball exists. */
+>             if (it && !it->gb.flag) {
+2818a2838,2853
+> 
+>                 /* Start of gumball in process_get_command(). */
+> 
+>                 /* Cache miss or K-G exists, return the miss time. */
+>                 char *miss_buf = malloc(MISS_CMD_BUFFER_SIZE);
+>                 //time_t miss_time = time(NULL);
+>                 gum_time_t miss_time = getSystemTime();
+>                 fprintf(stdout, "Current time is: %lld\n", miss_time);
+>                 snprintf(miss_buf, MISS_CMD_BUFFER_SIZE, "%lld", miss_time);
+>                 if(add_iov(c, "MISS ", 5) != 0 ||
+>                    add_iov(c, key, nkey) != 0 ||
+>                    add_iov(c, " ", 1) != 0 ||
+>                    add_iov(c, miss_buf, MISS_CMD_BUFFER_SIZE) != 0 ||
+>                    add_iov(c, "\r\n", 2));
+> 
+>                 /* End of gumball in process_get_command(). */
+2918c2953,2958
+<     it = item_alloc(key, nkey, flags, realtime(exptime), vlen);
+---
+>     /* Start of gumball in process_update_command(). */
+>     int result;
+>     //rel_time_t misstime;
+>     //rel_time_t currenttime = (rel_time_t)time(NULL);
+>     gum_time_t misstime;
+>     gum_time_t currenttime = getSystemTime();
+2920,2927c2960,2968
+<     if (it == 0) {
+<         if (! item_size_ok(nkey, flags, vlen))
+<             out_string(c, "SERVER_ERROR object too large for cache");
+<         else
+<             out_string(c, "SERVER_ERROR out of memory storing object");
+<         /* swallow the data line */
+<         c->write_and_go = conn_swallow;
+<         c->sbytes = vlen;
+---
+>     if (!safe_strtoll(tokens[MISS_TIME_TOKEN].value, (int64_t *)&misstime)) {
+>         fprintf(stdout, "ERROR when parsing client miss time.\n");
+>         out_string(c, "CLIENT_ERROR bad command line format");
+>         return;
+>     }
+>     if (settings.verbose > 1) {
+>         fprintf(stdout, "<Miss time %s\n", tokens[MISS_TIME_TOKEN].value);
+>         fprintf(stdout, "<Current time %lld\n", currenttime); 
+>     }
+2929,2935c2970,3028
+<         /* Avoid stale data persisting in cache because we failed alloc.
+<          * Unacceptable for SET. Anywhere else too? */
+<         if (comm == NREAD_SET) {
+<             it = item_get(key, nkey);
+<             if (it) {
+<                 item_unlink(it);
+<                 item_remove(it);
+---
+>     /* A gumball might have existed. */
+>     if (misstime > currenttime)
+>         return;
+>     /* Set when misstime is 0. */
+>     if (misstime != 0 && currenttime - misstime > delta_time) {
+>         fprintf(stdout, "A gumball might have existed.\n");
+>         return;
+>     }
+> 
+>     it = item_get(key, nkey);
+>     /* Exists K-G. */
+>     if (it && it->gb.flag) {
+>         /* Cache miss happened before deletion. */
+>         if (misstime != 0 && misstime < it->gb.deltime) {
+>             fprintf(stdout, "Cache miss happened before deletion.\n");
+>             return;
+>         }
+>         result = 1;    
+>     /* No entry for K. */
+>     } else if(!it) {
+>         /* Insert for K-V and keep miss time as metadata. */
+>         result = 2;
+>     /* Exists K-V. */
+>     } else if (it && !it->gb.flag) {
+>         /* Compare the miss time metadata. */
+>         result = 3;
+>     }
+> 
+>     if (1 == result) {
+>         /* Maintain miss time as metadata. */
+>         it->misstime = currenttime;
+> 
+>         ITEM_set_cas(it, req_cas_id);
+> 
+>         c->item = it;
+>         c->ritem = ITEM_data(it);
+>         c->rlbytes = it->nbytes;
+>         c->cmd = comm;
+>         conn_set_state(c, conn_nread);
+>     } else if (2 == result) {
+>         it = item_alloc(key, nkey, flags, realtime(exptime), vlen);
+> 
+>         if (it == 0) {
+>             if (! item_size_ok(nkey, flags, vlen))
+>                 out_string(c, "SERVER_ERROR object too large for cache");
+>             else
+>                 out_string(c, "SERVER_ERROR out of memory storing object");
+>             /* swallow the data line */
+>             c->write_and_go = conn_swallow;
+>             c->sbytes = vlen;
+> 
+>             /* Avoid stale data persisting in cache because we failed alloc.
+>              * Unacceptable for SET. Anywhere else too? */
+>             if (comm == NREAD_SET) {
+>                 it = item_get(key, nkey);
+>                 if (it) {
+>                     item_unlink(it);
+>                     item_remove(it);
+>                 }
+2936a3030,3031
+> 
+>             return;
+2939c3034,3058
+<         return;
+---
+>         /* Maintain miss time as metadata. */
+>         it->misstime = currenttime;
+> 
+>         ITEM_set_cas(it, req_cas_id);
+> 
+>         c->item = it;
+>         c->ritem = ITEM_data(it);
+>         c->rlbytes = it->nbytes;
+>         c->cmd = comm;
+>         conn_set_state(c, conn_nread);
+>     } else if (3 == result) {
+>         if (misstime != 0 && misstime < it->misstime) {
+>             fprintf(stdout, "Stale put operation.\n");
+>             return;
+>         }
+>         /* Maintain miss time as metadata. */
+>         it->misstime = currenttime;
+> 
+>         ITEM_set_cas(it, req_cas_id);
+> 
+>         c->item = it;
+>         c->ritem = ITEM_data(it);
+>         c->rlbytes = it->nbytes;
+>         c->cmd = comm;
+>         conn_set_state(c, conn_nread);
+2941d3059
+<     ITEM_set_cas(it, req_cas_id);
+2943,2947c3061
+<     c->item = it;
+<     c->ritem = ITEM_data(it);
+<     c->rlbytes = it->nbytes;
+<     c->cmd = comm;
+<     conn_set_state(c, conn_nread);
+---
+>     /* End of gumball in process_update_command(). */
+3165a3280
+>     /* Start of gumball in process_delete_command(). */
+3167c3282,3284
+<     if (it) {
+---
+> 
+>     /* K-V exists. */
+>     if (it && !it->gb.flag) {
+3173a3291,3296
+>         /* Generate gumball with current time. */
+>         it->gb.flag = 1;
+>         //it->gb.deltime = (rel_time_t)time(NULL);
+>         it->gb.deltime = getSystemTime();
+> 
+>         /*
+3175c3298
+<         item_remove(it);      /* release our reference */
+---
+>         item_remove(it);    */      /* release our reference */
+3177c3300,3319
+<     } else {
+---
+>     }
+>     /* No K-V exists. */ 
+>     else if(!it) {
+>         pthread_mutex_lock(&c->thread->stats.mutex);
+>         c->thread->stats.delete_misses++;
+>         pthread_mutex_unlock(&c->thread->stats.mutex);
+> 
+>         /* 
+>          * Generate K-G with current time. Set flags to 0, and exptime to expire_time,
+>          * in this case, during the GET operation, we could do lazy expiration to K-G. 
+>          */
+>         it = item_alloc(key, nkey, 0, expire_time, 0);
+>         it->gb.flag = 1;
+>         //it->gb.deltime = (rel_time_t)time(NULL);
+>         it->gb.deltime = getSystemTime();
+> 
+>         out_string(c, "NOT_FOUND");
+>     }
+>     /* K-G exists. */
+>     else {
+3181a3324,3327
+>         /* Set gumball to the current time. */
+>         //it->gb.deltime = (rel_time_t)time(NULL);
+>         it->gb.deltime = getSystemTime();
+> 
+3183a3330
+>     /* End of gumball in process_delete_command(). */
+3333,3341d3479
+<     } else if (ntokens == 2 && (strcmp(tokens[COMMAND_TOKEN].value, "shutdown") == 0)) {
+< 
+<         if (settings.shutdown_command) {
+<             conn_set_state(c, conn_closing);
+<             raise(SIGINT);
+<         } else {
+<             out_string(c, "ERROR: shutdown not enabled");
+<         }
+< 
+4458d4595
+<            "-A            enable ascii \"shutdown\" command\n"
+4762d4898
+<           "A"  /* enable admin shutdown commannd */
+4791,4795d4926
+<         case 'A':
+<             /* enables "shutdown" command */
+<             settings.shutdown_command = true;
+<             break;
+< 
+587226660:memcached dliu$ diff memcached.h /Users/dliu/Documents/584/project/Project/src/memcached-1.4.15/memcached.h
+207a208,210
+> /** Time to represent gumball related timestamp. */
+> typedef long long gum_time_t;
+> 
+310d312
+<     bool shutdown_command; /* allow shutdown command */
+324a327,339
+> /* Start of gumball in memcached.h. */
+> 
+> /* The number of digits for timestamp. Accuracy: millisecond. */
+> #define MISS_CMD_BUFFER_SIZE 14
+> 
+> /**
+>  * Structure for gumball.
+>  */
+> typedef struct _strgumball {
+>     unsigned short flag;    /* 1: gumball enabled; 0: gumball disabled. */
+>     gum_time_t deltime;     /* The latest time to do the deletion. */
+> } gumball;
+> 
+333a349
+>     gum_time_t      misstime;   /* miss time metadata. */
+339a356,358
+> 
+>     gumball gb; /* Gumball for item. */
+> 
+351a371,372
+> /* End of gumball in memcached.h. */
+> 
+587226660:memcached dliu$ diff items.c /Users/dliu/Documents/584/project/Project/src/memcached-1.4.15/items.c
+214a215,216
+>     /* No gumball when allocated. */
+>     it->gb.flag = 0;
+587226660:memcached dliu$ diff sasl_defs.c /Users/dliu/Documents/584/project/Project/src/memcached-1.4.15/sasl_defs.c
+148c148
+<    { SASL_CB_SERVER_USERDB_CHECKPASS, (sasl_callback_ft)sasl_server_userdb_checkpass, NULL },
+---
+>    { SASL_CB_SERVER_USERDB_CHECKPASS, sasl_server_userdb_checkpass, NULL },
