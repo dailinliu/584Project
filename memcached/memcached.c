@@ -3275,25 +3275,47 @@ static void process_delete_command(conn *c, token_t *tokens, const size_t ntoken
     if (settings.detail_enabled) {
         stats_prefix_record_delete(key, nkey);
     }
-
+    
+    /* Start handling Gumball */
     it = item_get(key, nkey);
-    if (it) {
+    
+    /* Case 1 - K-V exists */
+    if (it && !it->gb.flag) {
         MEMCACHED_COMMAND_DELETE(c->sfd, ITEM_key(it), it->nkey);
 
         pthread_mutex_lock(&c->thread->stats.mutex);
         c->thread->stats.slab_stats[it->slabs_clsid].delete_hits++;
         pthread_mutex_unlock(&c->thread->stats.mutex);
-
-        item_unlink(it);
-        item_remove(it);      /* release our reference */
+        
+        /* Generate Tgi as current time. */
+        it->gb.flag = 1;
+        it->gb.del_time = getSystemTime();
+        
         out_string(c, "DELETED");
-    } else {
+    }
+    /* Case 2 - K not found */
+    else if (!it) {
+        pthread_mutex_lock(&c->thread->stats.mutex);
+        c->thread->stats.slab_stats[it->slabs_clsid].delete_hits++;
+        pthread_mutex_unlock(&c->thread->stats.mutex);
+        
+        /* Generate K-G; Tgi = current time. */
+        it = item_alloc(key, nkey, -, expire_time, 0);
+        it->gb.flag = 1;
+        it->gb.del_time = getSystemTime();
+        out_string(c, "NOT_FOUND");
+    }
+    /* Case 3 - K-G found */
+    else {
         pthread_mutex_lock(&c->thread->stats.mutex);
         c->thread->stats.delete_misses++;
         pthread_mutex_unlock(&c->thread->stats.mutex);
 
-        out_string(c, "NOT_FOUND");
+        it->gb.del_time = getSystemTime();
+        
+        out_string(c, "K-V NOT_FOUND");
     }
+    /* End of Gumball. */
 }
 
 static void process_verbosity_command(conn *c, token_t *tokens, const size_t ntokens) {
