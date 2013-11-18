@@ -22,6 +22,7 @@
 #include <sys/uio.h>
 #include <ctype.h>
 #include <stdarg.h>
+#include <sys/timeb.h>
 
 /* some POSIX systems need the following definition
  * to get mlockall flags out of sys/mman.h.  */
@@ -94,6 +95,8 @@ static int ensure_iov_space(conn *c);
 static int add_iov(conn *c, const void *buf, int len);
 static int add_msghdr(conn *c);
 
+/* get system time, in millisecond. for gumball time*/
+static long long getSystemTime();
 
 static void conn_free(conn *c);
 
@@ -117,6 +120,21 @@ enum transmit_result {
 };
 
 static enum transmit_result transmit(conn *c);
+
+/* Delta T for gumball time life cycle. In milliseconde. */
+static const gum_time_t delta_time = 500;
+/* Time when gumball expires. */
+static const rel_time_t expire_time = 1;
+
+/* Implement get_system_time */
+static gum_time_t getSystemTime() {
+    struct timeb t;
+    ftime(&t);
+    fprintf(stdout, "Time = %u Milli = %u\n", (rel_time_t)t.time, t.millitm);
+    gum_time_t current_time = 1000 * (gum_time_t)t.time + t.millitm;
+    fprintf(stdout, "Time = %lld\n", current_time);
+    return current_time;
+}
 
 /* This reduces the latency without adding lots of extra wiring to be able to
  * notify the listener thread of when to listen again.
@@ -226,6 +244,7 @@ static void settings_init(void) {
     settings.slab_reassign = false;
     settings.slab_automove = 0;
 }
+
 
 /*
  * Adds a message header to a connection.
@@ -2385,6 +2404,9 @@ typedef struct token_s {
 
 #define MAX_TOKENS 8
 
+/* In GT, the input pair is ki, gi*/
+#define MISS_TIME_TOKEN 5
+
 /*
  * Tokenize the command string by replacing whitespace with '\0' and update
  * the token array tokens with pointer to start of each token and length.
@@ -2726,7 +2748,8 @@ static inline void process_get_command(conn *c, token_t *tokens, size_t ntokens,
             if (settings.detail_enabled) {
                 stats_prefix_record_get(key, nkey, NULL != it);
             }
-            if (it) {
+            /* Case 1 - Normal case. No cache miss && no gumball exists. */
+            if (it && it->gb.flag) {
                 if (i >= c->isize) {
                     item **new_list = realloc(c->ilist, sizeof(item *) * c->isize * 2);
                     if (new_list) {
@@ -2809,12 +2832,27 @@ static inline void process_get_command(conn *c, token_t *tokens, size_t ntokens,
                 *(c->ilist + i) = it;
                 i++;
 
-            } else {
+            }
+            /* Case 2 - Either cache miss or Gumball exists */
+            else {
                 pthread_mutex_lock(&c->thread->stats.mutex);
                 c->thread->stats.get_misses++;
                 c->thread->stats.get_cmds++;
                 pthread_mutex_unlock(&c->thread->stats.mutex);
                 MEMCACHED_COMMAND_GET(c->sfd, key, nkey, -1, 0);
+                
+                /* Start handling Gumball */
+                /* Report a cache miss with current time as T_miss time stamp */
+                char *miss_buf = malloc(MISS_CMD_BUFFER_SIZE);
+                gum_time_t miss_time = getSystemTime();
+                fprintf(stdout, "Get: Current time is: %lld\n", miss_time);
+                snprintf(miss_buf, MISS_CMD_BUFFER_SIZE, "%lld", miss_time);
+                if (add_iov(c, "MISS", 5) != 0 ||
+                    add_iov(c, key, nkey) != 0 ||
+                    add_iov(c, " ", 1) != 0 ||
+                    add_iov(c, miss_buf, MISS_CMD_BUFFER_SIZE) != 0 ||
+                    add_iov(c, "\r\n", 2));
+                /* End of Gumball */
             }
 
             key_token++;
@@ -2913,37 +2951,113 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     if (settings.detail_enabled) {
         stats_prefix_record_set(key, nkey);
     }
-
-    it = item_alloc(key, nkey, flags, realtime(exptime), vlen);
-
-    if (it == 0) {
-        if (! item_size_ok(nkey, flags, vlen))
-            out_string(c, "SERVER_ERROR object too large for cache");
-        else
-            out_string(c, "SERVER_ERROR out of memory storing object");
-        /* swallow the data line */
-        c->write_and_go = conn_swallow;
-        c->sbytes = vlen;
-
-        /* Avoid stale data persisting in cache because we failed alloc.
-         * Unacceptable for SET. Anywhere else too? */
-        if (comm == NREAD_SET) {
-            it = item_get(key, nkey);
-            if (it) {
-                item_unlink(it);
-                item_remove(it);
-            }
-        }
-
+    
+    /* Start handling Gumball */
+    int result;
+    gum_time_t miss_time;
+    gum_time_t current_time = getSystemTime();
+    
+    if (!safe_strtoll(tokens[MISS_TIME_TOKEN].value, (int64_t *)&miss_time)) {
+        fprintf(stdout, "ERROR when parsing client miss time.\n");
+        out_string(c, "CLIENT_ERROR bad command line format");
         return;
     }
-    ITEM_set_cas(it, req_cas_id);
-
-    c->item = it;
-    c->ritem = ITEM_data(it);
-    c->rlbytes = it->nbytes;
-    c->cmd = comm;
-    conn_set_state(c, conn_nread);
+    if (settings.verbose > 1) {
+        fprintf(stdout, "Update: < Miss time %s\n", tokens[MISS_TIME_TOKEN].value);
+        fprintf(stdout, "Update: < Current time %lld\n", current_time);
+    }
+    
+    /* Check the following cases */
+    /* 1. Tc - Tmiss > delta */
+    if (miss_time < current_time)
+        return;
+    if (miss_time != 0 && current_time - miss_time > delta_time) {
+        fprintf (stdout, "Gumball might have existed.");
+    }
+    
+    /* Other cases */
+    it = item_get(key, nkey);
+    /* 2. Gi exists, Tmiss < Tgi */
+    if (it && it->gb.flag) {
+        if (miss_time != 0 && miss_time < it->gb.del_time) {
+            fprintf(stout, "Cache miss happened before deletion.\n");
+            return;
+        }
+        result = 1;
+    }
+    else if (!it) {
+        /* No K found. Insert K-V and keep miss_time. */
+        result = 2
+    }
+    else if (it && !it->gb.flag) {
+        result  = 3;
+    }
+    
+    if (result == 1) {
+        /* Maintain miss time as metadata. */
+        it->miss_time = current_time;
+        
+        ITEM_set_cas(it, req_cas_id);
+        
+        c->item = it;
+        c->ritem = ITEM_data(it);
+        c->rlbytes = it->nbytes;
+        c->cmd = comm;
+        conn_set_state(c, conn_nread);
+    }
+    else if (result == 2) {
+        it = item_alloc(key, nkey, flags, realtime(exptime), vlen);
+        
+        if (it == 0) {
+            if (! item_size_ok(nkey, flags, vlen))
+                out_string(c, "SERVER_ERROR object too large for cache");
+            else
+                out_string(c, "SERVER_ERROR out of memory storing object");
+            /* swallow the data line */
+            c->write_and_go = conn_swallow;
+            c->sbytes = vlen;
+            
+            /* Avoid stale data persisting in cache because we failed alloc.
+             * Unacceptable for SET. Anywhere else too? */
+            if (comm == NREAD_SET) {
+                it = item_get(key, nkey);
+                if (it) {
+                    item_unlink(it);
+                    item_remove(it);
+                }
+            }
+            
+            return;
+        }
+        
+        /* Maintain miss time as metadata. */
+        it->miss_time = current_time;
+        
+        ITEM_set_cas(it, req_cas_id);
+        
+        c->item = it;
+        c->ritem = ITEM_data(it);
+        c->rlbytes = it->nbytes;
+        c->cmd = comm;
+        conn_set_state(c, conn_nread);
+    }
+    else if (result == 3) {
+        if (miss_time != 0 && miss_time < it->miss_time) {
+            fprintf(stdout, "Stale put operation.\n");
+            return;
+        }
+        /* Maintain miss time as metadata. */
+        it->miss_time = current_time;
+        
+        ITEM_set_cas(it, req_cas_id);
+        
+        c->item = it;
+        c->ritem = ITEM_data(it);
+        c->rlbytes = it->nbytes;
+        c->cmd = comm;
+        conn_set_state(c, conn_nread);
+    }
+    /* End of handling Gumball */
 }
 
 static void process_touch_command(conn *c, token_t *tokens, const size_t ntokens) {

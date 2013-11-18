@@ -204,6 +204,7 @@ enum delta_result_type {
 
 /** Time relative to server start. Smaller than time_t on 64-bit systems. */
 typedef unsigned int rel_time_t;
+typedef long long gum_time_t;
 
 /** Stats stored per slab (and per thread). */
 struct slab_stats {
@@ -321,6 +322,14 @@ extern struct settings settings;
 
 #define ITEM_FETCHED 8
 
+/* Structure and constants for Gumball */
+/* The number of digits for timestamp. Accuracy: millisecond. */
+
+typedef struct _strgumball {
+    unsigned short flag; /* 1: Enable gumball; 0: Disable gumball */
+    gum_time_t del_time; /* Tgi, the latest time to do the deletion. */
+} gumball;
+
 /**
  * Structure for storing items within memcached.
  */
@@ -330,12 +339,16 @@ typedef struct _stritem {
     struct _stritem *h_next;    /* hash chain next */
     rel_time_t      time;       /* least recent access */
     rel_time_t      exptime;    /* expire time */
+    gum_time_t      miss_time;   /* current server time when k-v misses*/
     int             nbytes;     /* size of data */
     unsigned short  refcount;
     uint8_t         nsuffix;    /* length of flags-and-length string */
     uint8_t         it_flags;   /* ITEM_* above */
     uint8_t         slabs_clsid;/* which slab class we're in */
     uint8_t         nkey;       /* key length, w/terminating null and padding */
+    
+    gumball         gb;     /* Gumball for item. */
+    
     /* this odd type prevents type-punning issues when we do
      * the little shuffle to save space when not using CAS. */
     union {
