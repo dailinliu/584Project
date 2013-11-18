@@ -2953,7 +2953,7 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     }
     
     /* Start handling Gumball */
-    int result;
+    int result=0;
     gum_time_t miss_time;
     gum_time_t current_time = getSystemTime();
     
@@ -2980,14 +2980,14 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     /* 2. Gi exists, Tmiss < Tgi */
     if (it && it->gb.flag) {
         if (miss_time != 0 && miss_time < it->gb.del_time) {
-            fprintf(stout, "Cache miss happened before deletion.\n");
+            fprintf(stdout, "Cache miss happened before deletion.\n");
             return;
         }
         result = 1;
     }
     else if (!it) {
         /* No K found. Insert K-V and keep miss_time. */
-        result = 2
+        result = 2;
     }
     else if (it && !it->gb.flag) {
         result  = 3;
@@ -3300,7 +3300,7 @@ static void process_delete_command(conn *c, token_t *tokens, const size_t ntoken
         pthread_mutex_unlock(&c->thread->stats.mutex);
         
         /* Generate K-G; Tgi = current time. */
-        it = item_alloc(key, nkey, -, expire_time, 0);
+        it = item_alloc(key, nkey, 0, expire_time, 0);
         it->gb.flag = 1;
         it->gb.del_time = getSystemTime();
         out_string(c, "NOT_FOUND");

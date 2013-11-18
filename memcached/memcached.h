@@ -324,7 +324,7 @@ extern struct settings settings;
 
 /* Structure and constants for Gumball */
 /* The number of digits for timestamp. Accuracy: millisecond. */
-
+#define MISS_CMD_BUFFER_SIZE 14
 typedef struct _strgumball {
     unsigned short flag; /* 1: Enable gumball; 0: Disable gumball */
     gum_time_t del_time; /* Tgi, the latest time to do the deletion. */
