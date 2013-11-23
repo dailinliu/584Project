@@ -29,6 +29,8 @@ import java.net.URLEncoder;
 
 import org.apache.log4j.Logger;
 
+import com.meetup.gumball.Gumball
+
 /**
  * This is a Memcached client for the Java platform available from
  *  <a href="http:/www.danga.com/memcached/">http://www.danga.com/memcached/</a>.
@@ -174,6 +176,8 @@ public class MemcachedClient {
 	private static final String ERROR        = "ERROR";			// invalid command name from client
 	private static final String CLIENT_ERROR = "CLIENT_ERROR";	// client error in input line - invalid protocol
 	private static final String SERVER_ERROR = "SERVER_ERROR";	// server error
+    
+    private static final String MISS		 = "MISS";			// start of missing line from server
 
 	private static final byte[] B_END        = "END\r\n".getBytes();
 	private static final byte[] B_NOTFOUND   = "NOT_FOUND\r\n".getBytes();
@@ -512,10 +516,11 @@ public class MemcachedClient {
 	 *
 	 * @param key key to store data under
 	 * @param value value to store
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean set( String key, Object value ) {
-		return set( "set", key, value, null, null, primitiveAsString );
+	public boolean set( String key, Object value, String missTime ) {
+		return set( "set", key, value, null, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -524,10 +529,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime 
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean set( String key, Object value, Integer hashCode ) {
-		return set( "set", key, value, null, hashCode, primitiveAsString );
+	public boolean set( String key, Object value, Integer hashCode, String missTime ) {
+		return set( "set", key, value, null, hashCode, primitiveAsString, missTime );
 	}
 
 	/**
@@ -536,10 +542,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param expiry when to expire the record
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean set( String key, Object value, Date expiry ) {
-		return set( "set", key, value, expiry, null, primitiveAsString );
+	public boolean set( String key, Object value, Date expiry, String missTime ) {
+		return set( "set", key, value, expiry, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -549,10 +556,11 @@ public class MemcachedClient {
 	 * @param value value to store
 	 * @param expiry when to expire the record
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean set( String key, Object value, Date expiry, Integer hashCode ) {
-		return set( "set", key, value, expiry, hashCode, primitiveAsString );
+	public boolean set( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+		return set( "set", key, value, expiry, hashCode, primitiveAsString, missTime );
 	}
 
 	/**
@@ -560,10 +568,11 @@ public class MemcachedClient {
 	 *
 	 * @param key key to store data under
 	 * @param value value to store
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean add( String key, Object value ) {
-		return set( "add", key, value, null, null, primitiveAsString );
+	public boolean add( String key, Object value, String missTime ) {
+		return set( "add", key, value, null, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -572,10 +581,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean add( String key, Object value, Integer hashCode ) {
-		return set( "add", key, value, null, hashCode, primitiveAsString );
+	public boolean add( String key, Object value, Integer hashCode, String missTime ) {
+		return set( "add", key, value, null, hashCode, primitiveAsString, missTime );
 	}
 
 	/**
@@ -584,10 +594,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param expiry when to expire the record
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean add( String key, Object value, Date expiry ) {
-		return set( "add", key, value, expiry, null, primitiveAsString );
+	public boolean add( String key, Object value, Date expiry, String missTime ) {
+		return set( "add", key, value, expiry, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -597,10 +608,11 @@ public class MemcachedClient {
 	 * @param value value to store
 	 * @param expiry when to expire the record
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean add( String key, Object value, Date expiry, Integer hashCode ) {
-		return set( "add", key, value, expiry, hashCode, primitiveAsString );
+	public boolean add( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+		return set( "add", key, value, expiry, hashCode, primitiveAsString, missTime );
 	}
 
 	/**
@@ -610,8 +622,8 @@ public class MemcachedClient {
 	 * @param value value to store
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean replace( String key, Object value ) {
-		return set( "replace", key, value, null, null, primitiveAsString );
+	public boolean replace( String key, Object value, String missTime ) {
+		return set( "replace", key, value, null, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -620,10 +632,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean replace( String key, Object value, Integer hashCode ) {
-		return set( "replace", key, value, null, hashCode, primitiveAsString );
+	public boolean replace( String key, Object value, Integer hashCode, String missTime ) {
+		return set( "replace", key, value, null, hashCode, primitiveAsString, missTime );
 	}
 
 	/**
@@ -632,10 +645,11 @@ public class MemcachedClient {
 	 * @param key key to store data under
 	 * @param value value to store
 	 * @param expiry when to expire the record
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean replace( String key, Object value, Date expiry ) {
-		return set( "replace", key, value, expiry, null, primitiveAsString );
+	public boolean replace( String key, Object value, Date expiry, String missTime ) {
+		return set( "replace", key, value, expiry, null, primitiveAsString, missTime );
 	}
 
 	/**
@@ -645,10 +659,11 @@ public class MemcachedClient {
 	 * @param value value to store
 	 * @param expiry when to expire the record
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true, if the data was successfully stored
 	 */
-	public boolean replace( String key, Object value, Date expiry, Integer hashCode ) {
-		return set( "replace", key, value, expiry, hashCode, primitiveAsString );
+	public boolean replace( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+		return set( "replace", key, value, expiry, hashCode, primitiveAsString, missTime );
 	}
 
 	/** 
@@ -669,9 +684,10 @@ public class MemcachedClient {
 	 * @param expiry expiration
 	 * @param hashCode if not null, then the int hashcode to use
 	 * @param asString store this object as a string?
+	 * @param missTime
 	 * @return true/false indicating success
 	 */
-	private boolean set( String cmdname, String key, Object value, Date expiry, Integer hashCode, boolean asString ) {
+	private boolean set( String cmdname, String key, Object value, Date expiry, Integer hashCode, boolean asString, String missTime ) {
 
 		if ( cmdname == null || cmdname.trim().equals( "" ) || key == null ) {
 			log.error( "key is null or cmd is null/empty for set()" );
@@ -820,7 +836,8 @@ public class MemcachedClient {
 
 		// now write the data to the cache server
 		try {
-			String cmd = String.format( "%s %s %d %d %d\r\n", cmdname, key, flags, (expiry.getTime() / 1000), val.length );
+			flags = 0;
+			String cmd = String.format( "%s %s %d %d %d %s\r\n", cmdname, key, flags, (expiry.getTime() / 1000), val.length, missTime );
 			sock.write( cmd.getBytes() );
 			sock.write( val );
 			sock.write( "\r\n".getBytes() );
@@ -880,10 +897,11 @@ public class MemcachedClient {
 	 * 
 	 * @param key cache key
 	 * @param counter number to store
+	 * @param missTime
 	 * @return true/false indicating success
 	 */
-	public boolean storeCounter( String key, long counter ) {
-		return set( "set", key, new Long( counter ), null, null, true );
+	public boolean storeCounter( String key, long counter, String missTime ) {
+		return set( "set", key, new Long( counter ), null, null, true, missTime );
 	}
 
 	/** 
@@ -891,10 +909,11 @@ public class MemcachedClient {
 	 * 
 	 * @param key cache key
 	 * @param counter number to store
+	 * @param missTime timestamp
 	 * @return true/false indicating success
 	 */
-	public boolean storeCounter( String key, Long counter ) {
-		return set( "set", key, counter, null, null, true );
+	public boolean storeCounter( String key, Long counter, String missTime ) {
+		return set( "set", key, counter, null, null, true, missTime );
 	}
     
 	/** 
@@ -903,9 +922,10 @@ public class MemcachedClient {
 	 * @param key cache key
 	 * @param counter number to store
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return true/false indicating success
 	 */
-	public boolean storeCounter( String key, Long counter, Integer hashCode ) {
+	public boolean storeCounter( String key, Long counter, Integer hashCode, String missTime ) {
 		return set( "set", key, counter, null, hashCode, true );
 	}
 
@@ -955,10 +975,11 @@ public class MemcachedClient {
 	 * Thread safe way to initialize and increment a counter. 
 	 * 
 	 * @param key key where the data is stored
+	 * @param missTime
 	 * @return value of incrementer
 	 */
-	public long addOrIncr( String key ) {
-		return addOrIncr( key, 0, null );
+	public long addOrIncr( String key, String missTime ) {
+		return addOrIncr( key, 0, null, missTime );
 	}
 
 	/** 
@@ -966,10 +987,11 @@ public class MemcachedClient {
 	 * 
 	 * @param key key where the data is stored
 	 * @param inc value to set or increment by
+	 * @param missTime
 	 * @return value of incrementer
 	 */
-	public long addOrIncr( String key, long inc ) {
-		return addOrIncr( key, inc, null );
+	public long addOrIncr( String key, long inc, String missTime ) {
+		return addOrIncr( key, inc, null, missTime );
 	}
 
 	/** 
@@ -978,10 +1000,11 @@ public class MemcachedClient {
 	 * @param key key where the data is stored
 	 * @param inc value to set or increment by
 	 * @param hashCode if not null, then the int hashcode to use
+	 * @param missTime
 	 * @return value of incrementer
 	 */
-	public long addOrIncr( String key, long inc, Integer hashCode ) {
-		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true );
+	public long addOrIncr( String key, long inc, Integer hashCode, String missTime ) {
+		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true, missTime );
 
 		if ( ret ) {
 			return inc;
@@ -995,10 +1018,11 @@ public class MemcachedClient {
 	 * Thread safe way to initialize and decrement a counter. 
 	 * 
 	 * @param key key where the data is stored
+	 * @param missTime
 	 * @return value of incrementer
 	 */
-	public long addOrDecr( String key ) {
-		return addOrDecr( key, 0, null );
+	public long addOrDecr( String key, String missTime ) {
+		return addOrDecr( key, 0, null, missTime );
 	}
 
 	/** 
@@ -1008,8 +1032,8 @@ public class MemcachedClient {
 	 * @param inc value to set or increment by
 	 * @return value of incrementer
 	 */
-	public long addOrDecr( String key, long inc ) {
-		return addOrDecr( key, inc, null );
+	public long addOrDecr( String key, long inc, String missTime ) {
+		return addOrDecr( key, inc, null, missTime );
 	}
 
 	/** 
@@ -1020,8 +1044,8 @@ public class MemcachedClient {
 	 * @param hashCode if not null, then the int hashcode to use
 	 * @return value of incrementer
 	 */
-	public long addOrDecr( String key, long inc, Integer hashCode ) {
-		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true );
+	public long addOrDecr( String key, long inc, Integer hashCode, String missTime ) {
+		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true, missTime );
 
 		if ( ret ) {
 			return inc;
@@ -1390,6 +1414,14 @@ public class MemcachedClient {
 					if ( log.isDebugEnabled() )
 						log.debug( "++++ finished reading from cache server" );
 					break;
+				}
+				// If find cache miss, initialize the missTime timestamp
+				else if (line.startsWith( MISS )) {
+					String[] info = line.split(" ");
+					String missTime = info[2];
+					
+					Gumball gb = new Gumball(key, missTime);
+					o = gb;
 				}
 			}
 			

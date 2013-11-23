@@ -184,3 +184,17 @@
 > 					Result rs = new Result(key, missTime);
 > 					o = rs;
 > 				}
+587226660:memcached dliu$ diff LineInputStream.java /Users/dliu/Documents/584/project/Project/src/Gumcached-Client/src/com/meetup/memcached/LineInputStream.java 
+16c16
+<  * @author greg whalin <greg@meetup.com>
+---
+>  * @author greg whalin <greg@meetup.com> 
+39c39
+< 	 * @param buf   The buffer into which read.
+---
+> 	 * @param buf   The buffer into which read. 
+43c43
+< }
+\ No newline at end of file
+---
+> }
