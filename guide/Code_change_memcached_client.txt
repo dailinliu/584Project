@@ -1,0 +1,186 @@
+587226660:memcached dliu$ diff MemcachedClient.java /Users/dliu/Documents/584/project/Project/src/Gumcached-Client/src/com/meetup/memcached/MemcachedClient.java 
+31a32,33
+> import com.meetup.memcached.gumball.Result;
+> 
+164a167
+> 	private static final String MISS         = "MISS";          // start of miss line from server
+514a518
+> 	 * @param missTime
+517,518c521,522
+< 	public boolean set( String key, Object value ) {
+< 		return set( "set", key, value, null, null, primitiveAsString );
+---
+> 	public boolean set( String key, Object value, String missTime ) {
+> 		return set( "set", key, value, null, null, primitiveAsString, missTime );
+526a531
+> 	 * @param missTime
+529,530c534,535
+< 	public boolean set( String key, Object value, Integer hashCode ) {
+< 		return set( "set", key, value, null, hashCode, primitiveAsString );
+---
+> 	public boolean set( String key, Object value, Integer hashCode, String missTime ) {
+> 		return set( "set", key, value, null, hashCode, primitiveAsString, missTime );
+538a544
+> 	 * @param missTime
+541,542c547,548
+< 	public boolean set( String key, Object value, Date expiry ) {
+< 		return set( "set", key, value, expiry, null, primitiveAsString );
+---
+> 	public boolean set( String key, Object value, Date expiry, String missTime ) {
+> 		return set( "set", key, value, expiry, null, primitiveAsString, missTime );
+551a558
+> 	 * @param missTime
+554,555c561,562
+< 	public boolean set( String key, Object value, Date expiry, Integer hashCode ) {
+< 		return set( "set", key, value, expiry, hashCode, primitiveAsString );
+---
+> 	public boolean set( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+> 		return set( "set", key, value, expiry, hashCode, primitiveAsString, missTime );
+562a570
+> 	 * @param missTime
+565,566c573,574
+< 	public boolean add( String key, Object value ) {
+< 		return set( "add", key, value, null, null, primitiveAsString );
+---
+> 	public boolean add( String key, Object value, String missTime ) {
+> 		return set( "add", key, value, null, null, primitiveAsString, missTime );
+574a583
+> 	 * @param missTime
+577,578c586,587
+< 	public boolean add( String key, Object value, Integer hashCode ) {
+< 		return set( "add", key, value, null, hashCode, primitiveAsString );
+---
+> 	public boolean add( String key, Object value, Integer hashCode, String missTime ) {
+> 		return set( "add", key, value, null, hashCode, primitiveAsString, missTime );
+586a596
+> 	 * @param missTime
+589,590c599,600
+< 	public boolean add( String key, Object value, Date expiry ) {
+< 		return set( "add", key, value, expiry, null, primitiveAsString );
+---
+> 	public boolean add( String key, Object value, Date expiry, String missTime ) {
+> 		return set( "add", key, value, expiry, null, primitiveAsString, missTime );
+599a610
+> 	 * @param missTime
+602,603c613,614
+< 	public boolean add( String key, Object value, Date expiry, Integer hashCode ) {
+< 		return set( "add", key, value, expiry, hashCode, primitiveAsString );
+---
+> 	public boolean add( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+> 		return set( "add", key, value, expiry, hashCode, primitiveAsString, missTime );
+610a622
+> 	 * @param missTime
+613,614c625,626
+< 	public boolean replace( String key, Object value ) {
+< 		return set( "replace", key, value, null, null, primitiveAsString );
+---
+> 	public boolean replace( String key, Object value, String missTime ) {
+> 		return set( "replace", key, value, null, null, primitiveAsString, missTime );
+622a635
+> 	 * @param missTime
+625,626c638,639
+< 	public boolean replace( String key, Object value, Integer hashCode ) {
+< 		return set( "replace", key, value, null, hashCode, primitiveAsString );
+---
+> 	public boolean replace( String key, Object value, Integer hashCode, String missTime ) {
+> 		return set( "replace", key, value, null, hashCode, primitiveAsString, missTime );
+634a648
+> 	 * @param missTime
+637,638c651,652
+< 	public boolean replace( String key, Object value, Date expiry ) {
+< 		return set( "replace", key, value, expiry, null, primitiveAsString );
+---
+> 	public boolean replace( String key, Object value, Date expiry, String missTime ) {
+> 		return set( "replace", key, value, expiry, null, primitiveAsString, missTime );
+647a662
+> 	 * @param missTime
+650,651c665,666
+< 	public boolean replace( String key, Object value, Date expiry, Integer hashCode ) {
+< 		return set( "replace", key, value, expiry, hashCode, primitiveAsString );
+---
+> 	public boolean replace( String key, Object value, Date expiry, Integer hashCode, String missTime ) {
+> 		return set( "replace", key, value, expiry, hashCode, primitiveAsString, missTime );
+671a687
+> 	 * @param missTime timestamp
+674c690
+< 	private boolean set( String cmdname, String key, Object value, Date expiry, Integer hashCode, boolean asString ) {
+---
+> 	private boolean set( String cmdname, String key, Object value, Date expiry, Integer hashCode, boolean asString, String missTime ) {
+823c839,840
+< 			String cmd = String.format( "%s %s %d %d %d\r\n", cmdname, key, flags, (expiry.getTime() / 1000), val.length );
+---
+> 			flags = 0;
+> 			String cmd = String.format( "%s %s %d %d %d %s\r\n", cmdname, key, flags, (expiry.getTime() / 1000), val.length, missTime );
+882a900
+> 	 * @param missTime
+885,886c903,904
+< 	public boolean storeCounter( String key, long counter ) {
+< 		return set( "set", key, new Long( counter ), null, null, true );
+---
+> 	public boolean storeCounter( String key, long counter, String missTime ) {
+> 		return set( "set", key, new Long( counter ), null, null, true, missTime );
+893a912
+> 	 * @param missTime
+896,897c915,916
+< 	public boolean storeCounter( String key, Long counter ) {
+< 		return set( "set", key, counter, null, null, true );
+---
+> 	public boolean storeCounter( String key, Long counter, String missTime ) {
+> 		return set( "set", key, counter, null, null, true, missTime );
+905a925
+> 	 * @param missTime
+908,909c928,929
+< 	public boolean storeCounter( String key, Long counter, Integer hashCode ) {
+< 		return set( "set", key, counter, null, hashCode, true );
+---
+> 	public boolean storeCounter( String key, Long counter, Integer hashCode, String missTime ) {
+> 		return set( "set", key, counter, null, hashCode, true, missTime );
+957a978
+> 	 * @param missTime
+960,961c981,982
+< 	public long addOrIncr( String key ) {
+< 		return addOrIncr( key, 0, null );
+---
+> 	public long addOrIncr( String key, String missTime ) {
+> 		return addOrIncr( key, 0, null, missTime );
+968a990
+> 	 * @param missTime
+971,972c993,994
+< 	public long addOrIncr( String key, long inc ) {
+< 		return addOrIncr( key, inc, null );
+---
+> 	public long addOrIncr( String key, long inc, String missTime ) {
+> 		return addOrIncr( key, inc, null, missTime );
+980a1003
+> 	 * @param missTime
+983,984c1006,1007
+< 	public long addOrIncr( String key, long inc, Integer hashCode ) {
+< 		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true );
+---
+> 	public long addOrIncr( String key, long inc, Integer hashCode, String missTime ) {
+> 		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true, missTime );
+1008a1032
+> 	 * @param missTime
+1011,1012c1035,1036
+< 	public long addOrDecr( String key, long inc ) {
+< 		return addOrDecr( key, inc, null );
+---
+> 	public long addOrDecr( String key, long inc, String missTime ) {
+> 		return addOrDecr( key, inc, null, missTime );
+1020a1045
+> 	 * @param missTime
+1023,1024c1048,1049
+< 	public long addOrDecr( String key, long inc, Integer hashCode ) {
+< 		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true );
+---
+> 	public long addOrDecr( String key, long inc, Integer hashCode, String missTime ) {
+> 		boolean ret = set( "add", key, new Long( inc ), null, hashCode, true, missTime );
+1393a1419,1426
+> 				// cache miss, miss timestamp.
+> 				else if ( line.startsWith( MISS ) ) {
+> 					String[] info = line.split(" ");
+> 					String missTime = info[2];
+> 					
+> 					Result rs = new Result(key, missTime);
+> 					o = rs;
+> 				}
