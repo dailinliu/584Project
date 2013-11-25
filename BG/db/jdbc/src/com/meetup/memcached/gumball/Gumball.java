@@ -7,7 +7,7 @@ public class Gumball {
 	
 	private String value;
 	
-	public Result(String flag, String value) {
+	public Gumball(String flag, String value) {
 		this.flag  = flag;
 		this.value = value;
 	}

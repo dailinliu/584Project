@@ -29,7 +29,7 @@ import java.net.URLEncoder;
 
 import org.apache.log4j.Logger;
 
-import com.meetup.gumball.Gumball
+import com.meetup.memcached.gumball.Gumball;
 
 /**
  * This is a Memcached client for the Java platform available from
@@ -926,7 +926,7 @@ public class MemcachedClient {
 	 * @return true/false indicating success
 	 */
 	public boolean storeCounter( String key, Long counter, Integer hashCode, String missTime ) {
-		return set( "set", key, counter, null, hashCode, true );
+		return set( "set", key, counter, null, hashCode, true, missTime );
 	}
 
 	/** 
