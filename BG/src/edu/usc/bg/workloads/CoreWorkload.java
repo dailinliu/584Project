@@ -2878,26 +2878,21 @@ public class CoreWorkload extends Workload
 					rels.put(uid2,"");
 				}
 				userRelations[memberIdxs.get(uid1)]= rels;
-                System.out.println("1st if");
 			}else{
 				HashMap<Integer, String> rels = new HashMap<Integer, String>();
 				rels.put(uid2,"");
 				userRelations[memberIdxs.get(uid1)]= rels;
 			}
-			System.out.println("here");
 			if(userRelations[memberIdxs.get(uid2)] != null){
-                System.out.println("2nd if");
 				HashMap<Integer, String> rels = userRelations[memberIdxs.get(uid2)];
 				if(!rels.containsKey(uid1)){
 					rels.put(uid1,"");
-                    System.out.println("2nd if if");
 				}
 				userRelations[memberIdxs.get(uid2)]= rels;
 			}else{
 				HashMap<Integer, String> rels = new HashMap<Integer, String>();
 				rels.put(uid1,"");
 				userRelations[memberIdxs.get(uid2)]= rels;
-                System.out.println("2nd else");
 			}
 
 			rStat.release();
