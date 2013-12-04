@@ -2969,7 +2969,7 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     
     /* Check the following cases */
     /* 1. Tc - Tmiss > delta */
-    if (miss_time < current_time)
+    if (miss_time > current_time) //use >
         return;
     if (miss_time != 0 && current_time - miss_time > delta_time) {
         fprintf (stdout, "Gumball might have existed.");
