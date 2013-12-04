@@ -1,0 +1,1268 @@
+67-194-99-112:BG dliu$ java -cp build/classes:lib/mysql-connector-java-5.1.18-bin.jar:lib/log4j-1.2.8.jar edu.usc.bg.base.Client -t -db memcached.WhalinMemcachedBGClient -P /Users/dliu/584Project/BG/workloads/MixOfAction -p maxexecutiontime=600 -p usercount=1000 -p initapproach=deterministic -p resourcecountperuser=100 -p friendcountperuser=100 -p confperc=1 -p numloadthreads=1 -p useroffset=0 -p zipfianmean=0.27 -p requestdistribution=dzipfian -p enablelogging=true -p validationapproach=interval
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+0.1
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999973
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 1000
+ZipfianMean=0.27 Usercount=1000 numMaxClusters=1; 20.0% of members have, 0.5945667080528851, initial probability.
+ZipfianMean=0.27 Usercount=1000 numMaxClusters=1; 20.0% of members have, 0.5945667080528868 clustering(new)probability.
+Time to create fragments : 34 msec
+ (might take a few minutes for large data sets)
+resested!
+
+After init: Sun Dec 01 16:05:49 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Sun Dec 01 16:15:50 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):2103
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:0
+	-- 10 secs: Reads are still being validated... NumPruned till now:1063519
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):10031
+	 TotalReadOps = 1063519 ,staleReadOps=0 ,staleness Perc (gran:user)=0.0
+	 TotalSeqRead = 1058840 ,staleSeqRead=0 ,staleness Perc (gran:user)=0.0
+******* Discrading, dumping and validation is done.12147
+DONE
+DATE: 2013/12/01 16:16:02
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0.1
+DeleteCommentOnResourceAction: 0.1
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 100
+initialresourcesperuser: 100
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0.1
+friendcountperuser: 100
+ViewProfileAction: 0.5
+InviteFriendAction: 0
+resourcecountperuser: 100
+ViewCommentsOnResourceAction: 0
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: 0.1
+ThawFriendshipAction: 0
+numloadthreads: 1
+ListFriendsAction: 0.1
+AcceptFrdReqSession: 0
+usercount: 1000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=100 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=100
+[OVERALL], RunTime(ms), 600549.0
+[OVERALL], opcount(sessions), 1512714
+[OVERALL], Throughput(sessions/sec), 2518.8852200236784
+[OVERALL], actcount(actions), 1282203
+[OVERALL], Throughput(actions/sec), 2135.051427943432
+OVERALLOPCOUNT(SESSIONS):1512714
+OVERALLTHROUGHPUT(SESSIONS/SECS):2518.8852200236784
+OVERALLOPCOUNT(ACTIONS):1282203
+OVERALLTHROUGHPUT(ACTIONS/SECS):2135.051427943432
+[UntilFirstThreadsDeath], RunTime(ms), 600549
+[UntilFirstThreadsDeath], opcount(sessions), 1512714
+RAMPEDOVERALLOPCOUNT(SESSIONS):1512714
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2518.8852200236784
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2518.8852200236784
+[UntilFirstThreadsDeath], opcount(actions), 1282203
+RAMPEDOVERALLOPCOUNT(ACTIONS):1282203
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2135.051427943432
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2135.051427943432
+[OVERALL], Read(ops), 1063519
+[OVERALL], StaleRead(ops), 0
+[OVERALL], Staleness(staleReads/totalReads), 0.0
+[OVERALL], Read(sessions), 1058840
+[OVERALL], StaleRead(sessions), 0
+[OVERALL], Staleness(staleSessions/totalSessions), 0.0
+[OVERALL], Pruned(ops), 1063519
+[OVERALL], Validationtime(ms), 12135
+[OVERALL], DumpAndValidationtime(ms), 12147
+[POSTCOMMENT]NumOperations=150968, AverageResponseTime(us)=1036.07, MinResponseTime(us)=412, MaxResponseTime(us)=843407
+ReturnCode:0 numObserved:150968
+[FRIENDS]NumOperations=150953, AverageResponseTime(us)=1016.41, MinResponseTime(us)=897, MaxResponseTime(us)=354320
+ReturnCode:0 numObserved:150953
+[PROFILE]NumOperations=756414, AverageResponseTime(us)=239.33, MinResponseTime(us)=163, MaxResponseTime(us)=283289
+ReturnCode:0 numObserved:756414
+[PENDING]NumOperations=151473, AverageResponseTime(us)=236.45, MinResponseTime(us)=159, MaxResponseTime(us)=83728
+ReturnCode:0 numObserved:151473
+[DELCOMMENT]NumOperations=72395, AverageResponseTime(us)=786.91, MinResponseTime(us)=428, MaxResponseTime(us)=111061
+ReturnCode:0 numObserved:72395
+
+0 ,73319
+1 ,43946
+2 ,32494
+3 ,26602
+4 ,22428
+5 ,19489
+6 ,17683
+7 ,16014
+8 ,14729
+9 ,13512
+10 ,12609
+11 ,11912
+12 ,11217
+13 ,10567
+14 ,10097
+15 ,9542
+16 ,9334
+17 ,8776
+18 ,8468
+19 ,8109
+20 ,7905
+21 ,7557
+22 ,7371
+23 ,7133
+24 ,6865
+25 ,6964
+26 ,6517
+27 ,6405
+28 ,6181
+29 ,6056
+30 ,5932
+31 ,5783
+32 ,5687
+33 ,5442
+34 ,5416
+35 ,5371
+36 ,5224
+37 ,5031
+38 ,4965
+39 ,4889
+40 ,4781
+41 ,4745
+42 ,4629
+43 ,4546
+44 ,4572
+45 ,4407
+46 ,4566
+47 ,4317
+48 ,4118
+49 ,4191
+50 ,4071
+51 ,4005
+52 ,4007
+53 ,3978
+54 ,3844
+55 ,3879
+56 ,3819
+57 ,3737
+58 ,3674
+59 ,3652
+60 ,3640
+61 ,3541
+62 ,3552
+63 ,3526
+64 ,3402
+65 ,3353
+66 ,3410
+67 ,3400
+68 ,3319
+69 ,3305
+70 ,3338
+71 ,3210
+72 ,3232
+73 ,3180
+74 ,3197
+75 ,3134
+76 ,3063
+77 ,2931
+78 ,2995
+79 ,3016
+80 ,2942
+81 ,2917
+82 ,2947
+83 ,2906
+84 ,2905
+85 ,2777
+86 ,2808
+87 ,2862
+88 ,2683
+89 ,2786
+90 ,2687
+91 ,2731
+92 ,2589
+93 ,2661
+94 ,2654
+95 ,2648
+96 ,2696
+97 ,2486
+98 ,2475
+99 ,2547
+100 ,2531
+101 ,2459
+102 ,2490
+103 ,2360
+104 ,2388
+105 ,2428
+106 ,2359
+107 ,2392
+108 ,2538
+109 ,2431
+110 ,2327
+111 ,2254
+112 ,2276
+113 ,2293
+114 ,2241
+115 ,2200
+116 ,2119
+117 ,2272
+118 ,2215
+119 ,2208
+120 ,2250
+121 ,2185
+122 ,2174
+123 ,2113
+124 ,2150
+125 ,2103
+126 ,2011
+127 ,2069
+128 ,2085
+129 ,2025
+130 ,2024
+131 ,2016
+132 ,1986
+133 ,2054
+134 ,2036
+135 ,2132
+136 ,2048
+137 ,2007
+138 ,1904
+139 ,1954
+140 ,2050
+141 ,1951
+142 ,2018
+143 ,1987
+144 ,1941
+145 ,1869
+146 ,1960
+147 ,1997
+148 ,1989
+149 ,1902
+150 ,1820
+151 ,1808
+152 ,1822
+153 ,1769
+154 ,1828
+155 ,1826
+156 ,1804
+157 ,1742
+158 ,1825
+159 ,1750
+160 ,1798
+161 ,1705
+162 ,1704
+163 ,1694
+164 ,1798
+165 ,1770
+166 ,1732
+167 ,1751
+168 ,1697
+169 ,1696
+170 ,1757
+171 ,1623
+172 ,1675
+173 ,1629
+174 ,1689
+175 ,1664
+176 ,1632
+177 ,1709
+178 ,1647
+179 ,1661
+180 ,1647
+181 ,1613
+182 ,1744
+183 ,1604
+184 ,1575
+185 ,1591
+186 ,1545
+187 ,1601
+188 ,1616
+189 ,1565
+190 ,1600
+191 ,1559
+192 ,1553
+193 ,1522
+194 ,1535
+195 ,1591
+196 ,1591
+197 ,1552
+198 ,1505
+199 ,1474
+200 ,1536
+201 ,1558
+202 ,1533
+203 ,1498
+204 ,1485
+205 ,1577
+206 ,1531
+207 ,1472
+208 ,1476
+209 ,1448
+210 ,1462
+211 ,1490
+212 ,1464
+213 ,1513
+214 ,1490
+215 ,1455
+216 ,1405
+217 ,1429
+218 ,1445
+219 ,1390
+220 ,1417
+221 ,1408
+222 ,1367
+223 ,1408
+224 ,1471
+225 ,1407
+226 ,1383
+227 ,1353
+228 ,1350
+229 ,1397
+230 ,1353
+231 ,1404
+232 ,1367
+233 ,1273
+234 ,1339
+235 ,1325
+236 ,1342
+237 ,1279
+238 ,1332
+239 ,1386
+240 ,1287
+241 ,1281
+242 ,1327
+243 ,1330
+244 ,1243
+245 ,1284
+246 ,1294
+247 ,1253
+248 ,1300
+249 ,1290
+250 ,1294
+251 ,1309
+252 ,1258
+253 ,1221
+254 ,1269
+255 ,1393
+256 ,1254
+257 ,1232
+258 ,1256
+259 ,1247
+260 ,1300
+261 ,1294
+262 ,1233
+263 ,1186
+264 ,1242
+265 ,1190
+266 ,1219
+267 ,1189
+268 ,1152
+269 ,1226
+270 ,1278
+271 ,1280
+272 ,1220
+273 ,1212
+274 ,1221
+275 ,1181
+276 ,1234
+277 ,1239
+278 ,1221
+279 ,1208
+280 ,1125
+281 ,1207
+282 ,1201
+283 ,1155
+284 ,1151
+285 ,1153
+286 ,1173
+287 ,1161
+288 ,1105
+289 ,1139
+290 ,1140
+291 ,1167
+292 ,1138
+293 ,1126
+294 ,1117
+295 ,1091
+296 ,1126
+297 ,1154
+298 ,1165
+299 ,1125
+300 ,1131
+301 ,1135
+302 ,1109
+303 ,1101
+304 ,1160
+305 ,1124
+306 ,1117
+307 ,1164
+308 ,1095
+309 ,1054
+310 ,1120
+311 ,1143
+312 ,1079
+313 ,1097
+314 ,1136
+315 ,1030
+316 ,1079
+317 ,1142
+318 ,1070
+319 ,1119
+320 ,1118
+321 ,1074
+322 ,1080
+323 ,1033
+324 ,1072
+325 ,1045
+326 ,1059
+327 ,1110
+328 ,1071
+329 ,1061
+330 ,981
+331 ,1031
+332 ,1067
+333 ,1069
+334 ,1045
+335 ,999
+336 ,1036
+337 ,1082
+338 ,1058
+339 ,1070
+340 ,1057
+341 ,1058
+342 ,1050
+343 ,990
+344 ,1054
+345 ,1077
+346 ,952
+347 ,1004
+348 ,1018
+349 ,1004
+350 ,1029
+351 ,968
+352 ,1031
+353 ,1006
+354 ,974
+355 ,1022
+356 ,961
+357 ,956
+358 ,972
+359 ,920
+360 ,1029
+361 ,983
+362 ,966
+363 ,1017
+364 ,953
+365 ,1000
+366 ,955
+367 ,950
+368 ,971
+369 ,973
+370 ,954
+371 ,967
+372 ,959
+373 ,930
+374 ,1000
+375 ,917
+376 ,938
+377 ,931
+378 ,915
+379 ,967
+380 ,951
+381 ,980
+382 ,950
+383 ,986
+384 ,916
+385 ,937
+386 ,914
+387 ,962
+388 ,923
+389 ,1008
+390 ,991
+391 ,928
+392 ,931
+393 ,941
+394 ,950
+395 ,914
+396 ,919
+397 ,960
+398 ,963
+399 ,927
+400 ,915
+401 ,915
+402 ,930
+403 ,899
+404 ,898
+405 ,933
+406 ,850
+407 ,950
+408 ,929
+409 ,903
+410 ,928
+411 ,877
+412 ,948
+413 ,859
+414 ,932
+415 ,920
+416 ,837
+417 ,931
+418 ,889
+419 ,907
+420 ,881
+421 ,863
+422 ,897
+423 ,888
+424 ,917
+425 ,799
+426 ,864
+427 ,913
+428 ,881
+429 ,925
+430 ,893
+431 ,805
+432 ,818
+433 ,827
+434 ,869
+435 ,913
+436 ,867
+437 ,889
+438 ,882
+439 ,860
+440 ,899
+441 ,880
+442 ,818
+443 ,888
+444 ,875
+445 ,781
+446 ,855
+447 ,820
+448 ,819
+449 ,885
+450 ,870
+451 ,825
+452 ,803
+453 ,830
+454 ,908
+455 ,826
+456 ,895
+457 ,893
+458 ,843
+459 ,829
+460 ,869
+461 ,843
+462 ,845
+463 ,816
+464 ,815
+465 ,775
+466 ,826
+467 ,853
+468 ,778
+469 ,841
+470 ,800
+471 ,779
+472 ,776
+473 ,814
+474 ,837
+475 ,803
+476 ,833
+477 ,795
+478 ,811
+479 ,811
+480 ,827
+481 ,809
+482 ,788
+483 ,808
+484 ,747
+485 ,797
+486 ,808
+487 ,806
+488 ,766
+489 ,782
+490 ,832
+491 ,752
+492 ,864
+493 ,785
+494 ,815
+495 ,807
+496 ,812
+497 ,801
+498 ,796
+499 ,786
+500 ,781
+501 ,769
+502 ,806
+503 ,760
+504 ,791
+505 ,722
+506 ,742
+507 ,772
+508 ,765
+509 ,724
+510 ,764
+511 ,834
+512 ,755
+513 ,794
+514 ,846
+515 ,763
+516 ,729
+517 ,700
+518 ,779
+519 ,730
+520 ,749
+521 ,763
+522 ,704
+523 ,740
+524 ,744
+525 ,746
+526 ,745
+527 ,726
+528 ,761
+529 ,724
+530 ,733
+531 ,784
+532 ,771
+533 ,765
+534 ,776
+535 ,771
+536 ,742
+537 ,769
+538 ,748
+539 ,741
+540 ,740
+541 ,725
+542 ,681
+543 ,725
+544 ,763
+545 ,692
+546 ,766
+547 ,737
+548 ,703
+549 ,733
+550 ,680
+551 ,728
+552 ,761
+553 ,768
+554 ,727
+555 ,750
+556 ,730
+557 ,712
+558 ,724
+559 ,718
+560 ,659
+561 ,688
+562 ,736
+563 ,706
+564 ,724
+565 ,712
+566 ,747
+567 ,665
+568 ,723
+569 ,683
+570 ,757
+571 ,777
+572 ,740
+573 ,691
+574 ,722
+575 ,691
+576 ,698
+577 ,692
+578 ,695
+579 ,719
+580 ,688
+581 ,704
+582 ,664
+583 ,671
+584 ,701
+585 ,692
+586 ,735
+587 ,719
+588 ,671
+589 ,664
+590 ,698
+591 ,688
+592 ,664
+593 ,728
+594 ,661
+595 ,718
+596 ,706
+597 ,673
+598 ,677
+599 ,678
+600 ,636
+601 ,707
+602 ,634
+603 ,697
+604 ,679
+605 ,702
+606 ,697
+607 ,654
+608 ,669
+609 ,640
+610 ,651
+611 ,657
+612 ,683
+613 ,694
+614 ,691
+615 ,673
+616 ,650
+617 ,632
+618 ,698
+619 ,655
+620 ,697
+621 ,656
+622 ,658
+623 ,675
+624 ,641
+625 ,658
+626 ,674
+627 ,680
+628 ,617
+629 ,667
+630 ,650
+631 ,645
+632 ,681
+633 ,644
+634 ,625
+635 ,630
+636 ,673
+637 ,616
+638 ,637
+639 ,677
+640 ,716
+641 ,668
+642 ,694
+643 ,584
+644 ,639
+645 ,643
+646 ,683
+647 ,656
+648 ,649
+649 ,616
+650 ,644
+651 ,710
+652 ,665
+653 ,651
+654 ,629
+655 ,586
+656 ,658
+657 ,648
+658 ,656
+659 ,622
+660 ,634
+661 ,659
+662 ,659
+663 ,595
+664 ,638
+665 ,611
+666 ,592
+667 ,659
+668 ,654
+669 ,641
+670 ,637
+671 ,649
+672 ,574
+673 ,654
+674 ,645
+675 ,670
+676 ,616
+677 ,631
+678 ,649
+679 ,608
+680 ,575
+681 ,588
+682 ,588
+683 ,596
+684 ,601
+685 ,638
+686 ,656
+687 ,627
+688 ,648
+689 ,640
+690 ,622
+691 ,624
+692 ,585
+693 ,616
+694 ,597
+695 ,658
+696 ,639
+697 ,614
+698 ,614
+699 ,614
+700 ,626
+701 ,591
+702 ,610
+703 ,631
+704 ,561
+705 ,605
+706 ,591
+707 ,587
+708 ,594
+709 ,576
+710 ,575
+711 ,560
+712 ,620
+713 ,593
+714 ,596
+715 ,584
+716 ,586
+717 ,571
+718 ,588
+719 ,621
+720 ,616
+721 ,582
+722 ,595
+723 ,594
+724 ,646
+725 ,595
+726 ,576
+727 ,584
+728 ,616
+729 ,587
+730 ,621
+731 ,613
+732 ,569
+733 ,545
+734 ,608
+735 ,592
+736 ,573
+737 ,605
+738 ,586
+739 ,591
+740 ,602
+741 ,579
+742 ,583
+743 ,590
+744 ,588
+745 ,619
+746 ,545
+747 ,575
+748 ,573
+749 ,559
+750 ,582
+751 ,562
+752 ,580
+753 ,585
+754 ,552
+755 ,576
+756 ,571
+757 ,552
+758 ,602
+759 ,584
+760 ,597
+761 ,569
+762 ,555
+763 ,547
+764 ,544
+765 ,616
+766 ,559
+767 ,587
+768 ,570
+769 ,550
+770 ,586
+771 ,557
+772 ,571
+773 ,563
+774 ,574
+775 ,590
+776 ,549
+777 ,564
+778 ,558
+779 ,593
+780 ,554
+781 ,591
+782 ,583
+783 ,536
+784 ,567
+785 ,543
+786 ,498
+787 ,576
+788 ,550
+789 ,574
+790 ,530
+791 ,548
+792 ,549
+793 ,568
+794 ,526
+795 ,530
+796 ,552
+797 ,545
+798 ,578
+799 ,559
+800 ,588
+801 ,545
+802 ,560
+803 ,549
+804 ,507
+805 ,553
+806 ,536
+807 ,561
+808 ,575
+809 ,551
+810 ,536
+811 ,536
+812 ,538
+813 ,547
+814 ,539
+815 ,587
+816 ,560
+817 ,553
+818 ,534
+819 ,536
+820 ,534
+821 ,554
+822 ,545
+823 ,540
+824 ,508
+825 ,556
+826 ,561
+827 ,559
+828 ,526
+829 ,576
+830 ,544
+831 ,485
+832 ,588
+833 ,538
+834 ,572
+835 ,565
+836 ,520
+837 ,515
+838 ,543
+839 ,545
+840 ,504
+841 ,554
+842 ,563
+843 ,525
+844 ,518
+845 ,527
+846 ,540
+847 ,539
+848 ,549
+849 ,517
+850 ,569
+851 ,522
+852 ,552
+853 ,516
+854 ,512
+855 ,542
+856 ,560
+857 ,526
+858 ,507
+859 ,509
+860 ,503
+861 ,518
+862 ,518
+863 ,515
+864 ,481
+865 ,555
+866 ,534
+867 ,527
+868 ,499
+869 ,570
+870 ,482
+871 ,514
+872 ,523
+873 ,545
+874 ,495
+875 ,484
+876 ,528
+877 ,534
+878 ,515
+879 ,522
+880 ,503
+881 ,527
+882 ,550
+883 ,502
+884 ,513
+885 ,517
+886 ,527
+887 ,547
+888 ,521
+889 ,539
+890 ,563
+891 ,516
+892 ,519
+893 ,460
+894 ,517
+895 ,496
+896 ,489
+897 ,506
+898 ,548
+899 ,490
+900 ,464
+901 ,525
+902 ,491
+903 ,489
+904 ,475
+905 ,483
+906 ,498
+907 ,520
+908 ,498
+909 ,546
+910 ,549
+911 ,498
+912 ,491
+913 ,522
+914 ,505
+915 ,477
+916 ,485
+917 ,503
+918 ,511
+919 ,489
+920 ,542
+921 ,523
+922 ,517
+923 ,506
+924 ,476
+925 ,453
+926 ,498
+927 ,537
+928 ,494
+929 ,515
+930 ,485
+931 ,493
+932 ,469
+933 ,504
+934 ,542
+935 ,478
+936 ,487
+937 ,467
+938 ,456
+939 ,475
+940 ,492
+941 ,470
+942 ,470
+943 ,484
+944 ,493
+945 ,494
+946 ,484
+947 ,472
+948 ,423
+949 ,477
+950 ,484
+951 ,470
+952 ,433
+953 ,490
+954 ,499
+955 ,439
+956 ,466
+957 ,492
+958 ,452
+959 ,476
+960 ,470
+961 ,486
+962 ,520
+963 ,476
+964 ,497
+965 ,483
+966 ,459
+967 ,535
+968 ,502
+969 ,519
+970 ,515
+971 ,492
+972 ,524
+973 ,516
+974 ,445
+975 ,488
+976 ,484
+977 ,495
+978 ,505
+979 ,505
+980 ,496
+981 ,467
+982 ,454
+983 ,449
+984 ,469
+985 ,458
+986 ,454
+987 ,480
+988 ,469
+989 ,479
+990 ,500
+991 ,496
+992 ,481
+993 ,458
+994 ,485
+995 ,437
+996 ,435
+997 ,457
+998 ,455
+999 ,433
+
+
+populateDB original
+# This is the workload for the user table.
+
+# Fields for populating the user table.
+usercount=10000
+useroffset=0
+resourcecountperuser=100
+friendcountperuser=100
+confperc=1
+
+userworkload=edu.usc.bg.workloads.UserWorkload
+friendshipworkload=edu.usc.bg.workloads.FriendshipWorkload
+resourceworkload=edu.usc.bg.workloads.ResourceWorkload
+
+
+requestdistribution=dzipfian
+requestmean=0.27
+
+
+67-194-99-112:BG dliu$ java -cp build/classes:lib/mysql-connector-java-5.1.18-bin.jar:lib/log4j-1.2.8.jar edu.usc.bg.base.Client -t -db memcached.WhalinMemcachedBGClient -P /Users/dliu/584Project/BG/workloads/MixOfAction -p maxexecutiontime=600 -p usercount=10000 -p initapproach=deterministic -p resourcecountperuser=10 -p friendcountperuser=10 -p confperc=1 -p numloadthreads=10 -p useroffset=0 -p zipfianmean=0.27 -p requestdistribution=dzipfian -p enablelogging=true -p validationapproach=interval
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+0.25
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 57 msec
+resested!
+
+After init: Mon Dec 02 00:37:11 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Mon Dec 02 00:47:12 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):7491
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:116610
+	-- 10 secs: Reads are still being validated... NumPruned till now:71244
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:436759
+	-- 20 secs: Reads are still being validated... NumPruned till now:240296
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20046
+	 TotalReadOps = 677055 ,staleReadOps=10017 ,staleness Perc (gran:user)=0.014794957573609234
+	 TotalSeqRead = 677055 ,staleSeqRead=10017 ,staleness Perc (gran:user)=0.014794957573609234
+******* Discrading, dumping and validation is done.27576
+DONE
+DATE: 2013/12/02 00:47:39
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: 0.25
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: 0.5
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: 0.25
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600524.0
+[OVERALL], opcount(sessions), 1357123
+[OVERALL], Throughput(sessions/sec), 2259.898022393776
+[OVERALL], actcount(actions), 1225845
+[OVERALL], Throughput(actions/sec), 2041.2922714162964
+OVERALLOPCOUNT(SESSIONS):1357123
+OVERALLTHROUGHPUT(SESSIONS/SECS):2259.898022393776
+OVERALLOPCOUNT(ACTIONS):1225845
+OVERALLTHROUGHPUT(ACTIONS/SECS):2041.2922714162964
+[UntilFirstThreadsDeath], RunTime(ms), 600524
+[UntilFirstThreadsDeath], opcount(sessions), 1357123
+RAMPEDOVERALLOPCOUNT(SESSIONS):1357123
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2259.898022393776
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2259.898022393776
+[UntilFirstThreadsDeath], opcount(actions), 1225845
+RAMPEDOVERALLOPCOUNT(ACTIONS):1225845
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2041.2922714162964
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2041.2922714162964
+[OVERALL], Read(ops), 677055
+[OVERALL], StaleRead(ops), 10017
+[OVERALL], Staleness(staleReads/totalReads), 0.014794957573609234
+[OVERALL], Read(sessions), 677055
+[OVERALL], StaleRead(sessions), 10017
+[OVERALL], Staleness(staleSessions/totalSessions), 0.014794957573609234
+[OVERALL], Pruned(ops), 240296
+[OVERALL], Validationtime(ms), 27538
+[OVERALL], DumpAndValidationtime(ms), 27576
+[POSTCOMMENT]NumOperations=340208, AverageResponseTime(us)=608.24, MinResponseTime(us)=389, MaxResponseTime(us)=1914430
+ReturnCode:0 numObserved:340208
+[GETRESCOMMENT]NumOperations=677055, AverageResponseTime(us)=364.3, MinResponseTime(us)=185, MaxResponseTime(us)=177004
+ReturnCode:0 numObserved:677055
+[DELCOMMENT]NumOperations=208582, AverageResponseTime(us)=618.13, MinResponseTime(us)=390, MaxResponseTime(us)=868343
+ReturnCode:0 numObserved:208582
+

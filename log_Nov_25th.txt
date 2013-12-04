@@ -1,0 +1,18 @@
+Exception in thread "Thread-3" java.lang.NoSuchMethodError: com.meetup.memcached.MemcachedClient.set(Ljava/lang/String;Ljava/lang/Object;)Z
+	at memcached.WhalinMemcachedBGClient.CacheSet(Unknown Source)
+	at memcached.WhalinMemcachedBGClient.viewProfile(Unknown Source)
+	at edu.usc.bg.base.DBWrapper.viewProfile(Unknown Source)
+	at edu.usc.bg.workloads.CoreWorkload.doActionGetProfile(Unknown Source)
+	at edu.usc.bg.workloads.CoreWorkload.doTransaction(Unknown Source)
+	at edu.usc.bg.base.ClientThread.run(Unknown Source)
+killerThread died
+monitoringThread died
+statusThread died
+
+==============================================================================================================================================
+Compile UnitTest: javac -cp bin:lib/log4j.jar src/com/meetup/memcached/test/UnitTest.java
+Run UnitTest: java -cp bin:lib/log4j.jar com.meetup.memcached.test.UnitTest
+==============================================================================================================================================
+A log record consists of a unique identifier, the action that produced it, the resource referenced by the action, its socialite session id, and start and end time stamp of the action. The read log record contains its observed value from the data store. The write log contains either the new value (named Absolute Write Log, AWL, records) or change (named Delta Write Log, DWL, records) to existing value of its referenced resource.
+
+ps auxw | grep memcached

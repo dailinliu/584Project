@@ -360,33 +360,26 @@ private static final boolean verbose = false;
 			dropIndex(stmt, "FRIENDSHIP_INVITERID");
 			dropIndex(stmt, "MANIPULATION_RID");
 			dropIndex(stmt, "MANIPULATION_CREATORID");
-			stmt.executeUpdate("CREATE INDEX RESOURCE_CREATORID ON RESOURCES (CREATORID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX RESOURCE_CREATORID ON RESOURCES (CREATORID)");
 
-			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_INVITEEID ON FRIENDSHIP (INVITEEID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_INVITEEID ON FRIENDSHIP (INVITEEID)");
 
-			stmt.executeUpdate("CREATE INDEX MANIPULATION_RID ON MANIPULATION (RID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX MANIPULATION_RID ON MANIPULATION (RID)");
 
-			stmt.executeUpdate("CREATE INDEX RESOURCES_WALLUSERID ON RESOURCES (WALLUSERID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX RESOURCES_WALLUSERID ON RESOURCES (WALLUSERID)");
 
-			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_INVITERID ON FRIENDSHIP (INVITERID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_INVITERID ON FRIENDSHIP (INVITERID)");
 
 			
-			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_STATUS ON FRIENDSHIP (STATUS)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX FRIENDSHIP_STATUS ON FRIENDSHIP (STATUS)");
 
 			
-			stmt.executeUpdate("CREATE INDEX MANIPULATION_CREATORID ON MANIPULATION (CREATORID)"
-					+ "COMPUTE STATISTICS NOLOGGING");
+			stmt.executeUpdate("CREATE INDEX MANIPULATION_CREATORID ON MANIPULATION (CREATORID)");
 			
-			stmt.executeUpdate("analyze table users compute statistics");
-			stmt.executeUpdate("analyze table resources compute statistics");
-			stmt.executeUpdate("analyze table friendship compute statistics");
-			stmt.executeUpdate("analyze table manipulation compute statistics");
+			stmt.executeUpdate("analyze table users");
+			stmt.executeUpdate("analyze table resources");
+			stmt.executeUpdate("analyze table friendship");
+			stmt.executeUpdate("analyze table manipulation");
 			long endIdx = System.currentTimeMillis();
 			System.out
 			.println("Time to build database index structures(ms):"

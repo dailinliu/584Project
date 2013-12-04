@@ -1,0 +1,2 @@
+67-194-47-55:memcached-1.4.15 dliu$ memcached -d -l 127.0.0.1 -p 11211 -m 64
+67-194-47-55:memcached-1.4.15 dliu$ ps auxw | grep memcached
