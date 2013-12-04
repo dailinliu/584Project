@@ -2972,6 +2972,13 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     if (miss_time > current_time) //use >
         return;
     if (miss_time != 0 && current_time - miss_time > delta_time) {
+        //expand_delta
+        if(miss_time > adjust_time){
+            //TODO: lock
+            adjust_time = current_time;//TODO: define adjust_time
+            delta_time = (current_time - miss_time) * ALPHA; //TODO: define alpha
+            //TODO: unlock        
+        }
         fprintf (stdout, "Gumball might have existed.");
     }
     
