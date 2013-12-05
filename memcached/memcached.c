@@ -2967,11 +2967,34 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
         fprintf(stdout, "Update: < Current time %lld\n", current_time);
     }
     
+//TODO: need to define::: alpha = 1.1 , RT_MAX = 0, adjust_time, last_judge,
+    if(current_time - last_judge > 60){
+        //TODO:lock	
+        last_judge = current_time;
+	    if(RT_MAX * alpha < delta_time) {
+		    
+		    delta_time = RT_MAX * alpha;
+		    RT_MAX = current_time - misstime;
+	    }
+        //TODO:unlock
+    }
+    if(current_time - miss_time > RT_MAX){
+	    //TODO:lock
+	    RT_MAX = current_time - miss_time;
+	    //TODO:unlock
+    }
     /* Check the following cases */
     /* 1. Tc - Tmiss > delta */
     if (miss_time > current_time) //use >
         return;
     if (miss_time != 0 && current_time - miss_time > delta_time) {
+        //expand_delta
+        if(miss_time > adjust_time){
+            //TODO: lock
+            adjust_time = current_time;//TODO: define adjust_time
+            delta_time = (current_time - miss_time) * ALPHA; //TODO: define alpha
+            //TODO: unlock        
+        }
         fprintf (stdout, "Gumball might have existed.");
     }
     

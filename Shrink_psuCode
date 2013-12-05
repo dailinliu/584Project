@@ -1,21 +1,43 @@
+//TODO: define global: window_size, time[window_size], count[window_size], last_judge;
 time_t time[window_size];
 int count[window_size];
 int last_judge = 0;
 deduct = current_time - miss_time;
 index = current_time % 10;
 if(current_time - last_judge > 1){
-
+	for(int i = 0; i < window_size; i++){
+		sum_time += time[i];
+		sum_count += count[i];		
+	}
 	//TODO: use lock
-	if(sum(time) / sum(count) * 3 < delta_time){
-		delta_time =   sum(time) / sum(count) * 3;
+	if(sum_time / sum_count * 3 < delta_time){
+		
+		int temp = sum(time) / sum(count) * 3 * alpha;
+		if(temp < delta_time) delta_time = temp;
 	}
 	last_judge = current_time;	
 	time[index] = 0;
 	count[index] = 0;
 	//TODO: use unlock
 
-	
 }
 time[index] += deduct;
 count[index] ++;
 
+
+///////////////////////////////////////////////paper version shrink/////////////////////////////////////////////
+
+if(current_time - last_judge > 60){
+	if(RT_MAX * alpha < delta_time) {
+		//lock	
+		delta_time = RT_MAX * alpha;
+		RT_MAX = current_time - misstime;
+		//unlock
+	}
+	
+}
+if(current_time - miss_time > RT_MAX){
+	//lock
+	RT_MAX = current_time - miss_time;
+	//unlock
+}
