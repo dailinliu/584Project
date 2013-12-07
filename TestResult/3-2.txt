@@ -1,0 +1,4661 @@
+Last login: Wed Dec  4 23:07:09 on ttys002
+67-194-43-102:~ dliu$ cd 584Project/BG
+67-194-43-102:BG dliu$ ./bashtest.sh 
+Update rate: 0.0, Read rate: 1.0
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+20 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1435
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=24165
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+30 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+0.0
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 57 msec
+resested!
+
+After init: Thu Dec 05 11:34:15 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 11:44:15 EST 2013
+DONE
+DATE: 2013/12/05 11:44:15
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: 0.0
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: 1.0
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: 0.0
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 2267088
+[OVERALL], Throughput(sessions/sec), 3775.208152934124
+[OVERALL], actcount(actions), 2267088
+[OVERALL], Throughput(actions/sec), 3775.208152934124
+OVERALLOPCOUNT(SESSIONS):2267088
+OVERALLTHROUGHPUT(SESSIONS/SECS):3775.208152934124
+OVERALLOPCOUNT(ACTIONS):2267088
+OVERALLTHROUGHPUT(ACTIONS/SECS):3775.208152934124
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 2267088
+RAMPEDOVERALLOPCOUNT(SESSIONS):2267088
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 3775.208152934124
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):3775.208152934124
+[UntilFirstThreadsDeath], opcount(actions), 2267088
+RAMPEDOVERALLOPCOUNT(ACTIONS):2267088
+[UntilFirstThreadsDeath], Throughput(actions/sec), 3775.208152934124
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):3775.208152934124
+[GETRESCOMMENT]NumOperations=2267088, AverageResponseTime(us)=252.48, MinResponseTime(us)=167, MaxResponseTime(us)=28222
+ReturnCode:0 numObserved:2267088
+
+Sleep for 15s
+Update rate: .05, Read rate: .90
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1382
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18521
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.05
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 54 msec
+resested!
+
+After init: Thu Dec 05 11:44:56 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 11:54:57 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):1995
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:228957
+	-- 10 secs: Reads are still being validated... NumPruned till now:367649
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:487829
+	-- 20 secs: Reads are still being validated... NumPruned till now:713792
+Stop requested for workload. Now Joining!
+	-- 30 secs: Reads are still being validated... NumReadOpsProcessed till now:710113
+	-- 30 secs: Reads are still being validated... NumPruned till now:1049299
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):31784
+	 TotalReadOps = 1759412 ,staleReadOps=0 ,staleness Perc (gran:user)=0.0
+	 TotalSeqRead = 1759412 ,staleSeqRead=0 ,staleness Perc (gran:user)=0.0
+******* Discrading, dumping and validation is done.33815
+DONE
+DATE: 2013/12/05 11:55:31
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .05
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .90
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .05
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600521.0
+[OVERALL], opcount(sessions), 1954879
+[OVERALL], Throughput(sessions/sec), 3255.304976845106
+[OVERALL], actcount(actions), 1899990
+[OVERALL], Throughput(actions/sec), 3163.9026778414077
+OVERALLOPCOUNT(SESSIONS):1954879
+OVERALLTHROUGHPUT(SESSIONS/SECS):3255.304976845106
+OVERALLOPCOUNT(ACTIONS):1899990
+OVERALLTHROUGHPUT(ACTIONS/SECS):3163.9026778414077
+[UntilFirstThreadsDeath], RunTime(ms), 600521
+[UntilFirstThreadsDeath], opcount(sessions), 1954879
+RAMPEDOVERALLOPCOUNT(SESSIONS):1954879
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 3255.304976845106
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):3255.304976845106
+[UntilFirstThreadsDeath], opcount(actions), 1899990
+RAMPEDOVERALLOPCOUNT(ACTIONS):1899990
+[UntilFirstThreadsDeath], Throughput(actions/sec), 3163.9026778414077
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):3163.9026778414077
+[OVERALL], Read(ops), 1759412
+[OVERALL], StaleRead(ops), 0
+[OVERALL], Staleness(staleReads/totalReads), 0.0
+[OVERALL], Read(sessions), 1759412
+[OVERALL], StaleRead(sessions), 0
+[OVERALL], Staleness(staleSessions/totalSessions), 0.0
+[OVERALL], Pruned(ops), 1049299
+[OVERALL], Validationtime(ms), 33779
+[OVERALL], DumpAndValidationtime(ms), 33815
+[POSTCOMMENT]NumOperations=97730, AverageResponseTime(us)=784.72, MinResponseTime(us)=415, MaxResponseTime(us)=230324
+ReturnCode:0 numObserved:97730
+[GETRESCOMMENT]NumOperations=1759412, AverageResponseTime(us)=262.83, MinResponseTime(us)=162, MaxResponseTime(us)=162376
+ReturnCode:0 numObserved:1759412
+[DELCOMMENT]NumOperations=42848, AverageResponseTime(us)=783.11, MinResponseTime(us)=427, MaxResponseTime(us)=124973
+ReturnCode:0 numObserved:42848
+
+Sleep for 15s
+Update rate: .10, Read rate: .80
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1281
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17847
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.10
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 58 msec
+resested!
+
+After init: Thu Dec 05 11:56:13 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 12:06:13 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):2749
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:80039
+	-- 10 secs: Reads are still being validated... NumPruned till now:92813
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:651444
+	-- 20 secs: Reads are still being validated... NumPruned till now:617117
+Stop requested for workload. Now Joining!
+	-- 30 secs: Reads are still being validated... NumReadOpsProcessed till now:701043
+	-- 30 secs: Reads are still being validated... NumPruned till now:679034
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):32188
+	 TotalReadOps = 1380077 ,staleReadOps=168345 ,staleness Perc (gran:user)=0.12198232417466562
+	 TotalSeqRead = 1380077 ,staleSeqRead=168345 ,staleness Perc (gran:user)=0.12198232417466562
+******* Discrading, dumping and validation is done.34940
+DONE
+DATE: 2013/12/05 12:06:48
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .10
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .80
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .10
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600519.0
+[OVERALL], opcount(sessions), 1725489
+[OVERALL], Throughput(sessions/sec), 2873.3295699220175
+[OVERALL], actcount(actions), 1642630
+[OVERALL], Throughput(actions/sec), 2735.350588407694
+OVERALLOPCOUNT(SESSIONS):1725489
+OVERALLTHROUGHPUT(SESSIONS/SECS):2873.3295699220175
+OVERALLOPCOUNT(ACTIONS):1642630
+OVERALLTHROUGHPUT(ACTIONS/SECS):2735.350588407694
+[UntilFirstThreadsDeath], RunTime(ms), 600519
+[UntilFirstThreadsDeath], opcount(sessions), 1725489
+RAMPEDOVERALLOPCOUNT(SESSIONS):1725489
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2873.3295699220175
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2873.3295699220175
+[UntilFirstThreadsDeath], opcount(actions), 1642630
+RAMPEDOVERALLOPCOUNT(ACTIONS):1642630
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2735.350588407694
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2735.350588407694
+[OVERALL], Read(ops), 1380077
+[OVERALL], StaleRead(ops), 168345
+[OVERALL], Staleness(staleReads/totalReads), 0.12198232417466562
+[OVERALL], Read(sessions), 1380077
+[OVERALL], StaleRead(sessions), 168345
+[OVERALL], Staleness(staleSessions/totalSessions), 0.12198232417466562
+[OVERALL], Pruned(ops), 679034
+[OVERALL], Validationtime(ms), 34938
+[OVERALL], DumpAndValidationtime(ms), 34940
+[POSTCOMMENT]NumOperations=173106, AverageResponseTime(us)=697.31, MinResponseTime(us)=396, MaxResponseTime(us)=183758
+ReturnCode:0 numObserved:173106
+[GETRESCOMMENT]NumOperations=1380077, AverageResponseTime(us)=285.19, MinResponseTime(us)=166, MaxResponseTime(us)=206059
+ReturnCode:0 numObserved:1380077
+[DELCOMMENT]NumOperations=89447, AverageResponseTime(us)=698.39, MinResponseTime(us)=420, MaxResponseTime(us)=145239
+ReturnCode:0 numObserved:89447
+
+Sleep for 15s
+Update rate: .15, Read rate: .70
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1508
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18918
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.15
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 51 msec
+resested!
+
+After init: Thu Dec 05 12:07:30 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 12:17:31 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):3908
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:79061
+	-- 10 secs: Reads are still being validated... NumPruned till now:72061
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:599826
+	-- 20 secs: Reads are still being validated... NumPruned till now:463982
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):21685
+	 TotalReadOps = 1063808 ,staleReadOps=153071 ,staleness Perc (gran:user)=0.1438896868607869
+	 TotalSeqRead = 1063808 ,staleSeqRead=153071 ,staleness Perc (gran:user)=0.1438896868607869
+******* Discrading, dumping and validation is done.25596
+DONE
+DATE: 2013/12/05 12:17:56
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .15
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .70
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .15
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600521.0
+[OVERALL], opcount(sessions), 1519039
+[OVERALL], Throughput(sessions/sec), 2529.535186946002
+[OVERALL], actcount(actions), 1418692
+[OVERALL], Throughput(actions/sec), 2362.435285360545
+OVERALLOPCOUNT(SESSIONS):1519039
+OVERALLTHROUGHPUT(SESSIONS/SECS):2529.535186946002
+OVERALLOPCOUNT(ACTIONS):1418692
+OVERALLTHROUGHPUT(ACTIONS/SECS):2362.435285360545
+[UntilFirstThreadsDeath], RunTime(ms), 600521
+[UntilFirstThreadsDeath], opcount(sessions), 1519039
+RAMPEDOVERALLOPCOUNT(SESSIONS):1519039
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2529.535186946002
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2529.535186946002
+[UntilFirstThreadsDeath], opcount(actions), 1418692
+RAMPEDOVERALLOPCOUNT(ACTIONS):1418692
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2362.435285360545
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2362.435285360545
+[OVERALL], Read(ops), 1063808
+[OVERALL], StaleRead(ops), 153071
+[OVERALL], Staleness(staleReads/totalReads), 0.1438896868607869
+[OVERALL], Read(sessions), 1063808
+[OVERALL], StaleRead(sessions), 153071
+[OVERALL], Staleness(staleSessions/totalSessions), 0.1438896868607869
+[OVERALL], Pruned(ops), 463982
+[OVERALL], Validationtime(ms), 25594
+[OVERALL], DumpAndValidationtime(ms), 25596
+[POSTCOMMENT]NumOperations=227899, AverageResponseTime(us)=679.36, MinResponseTime(us)=391, MaxResponseTime(us)=303749
+ReturnCode:0 numObserved:227899
+[GETRESCOMMENT]NumOperations=1063808, AverageResponseTime(us)=314.96, MinResponseTime(us)=164, MaxResponseTime(us)=196037
+ReturnCode:0 numObserved:1063808
+[DELCOMMENT]NumOperations=126985, AverageResponseTime(us)=694.32, MinResponseTime(us)=403, MaxResponseTime(us)=210862
+ReturnCode:0 numObserved:126985
+
+Sleep for 15s
+Update rate: .20, Read rate: .60
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :59 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1335
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18985
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.20
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 59 msec
+resested!
+
+After init: Thu Dec 05 12:18:37 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 12:28:38 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):5166
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:41687
+	-- 10 secs: Reads are still being validated... NumPruned till now:31332
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:525635
+	-- 20 secs: Reads are still being validated... NumPruned till now:335838
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20904
+	 TotalReadOps = 861473 ,staleReadOps=109711 ,staleness Perc (gran:user)=0.12735280153875977
+	 TotalSeqRead = 861473 ,staleSeqRead=109711 ,staleness Perc (gran:user)=0.12735280153875977
+******* Discrading, dumping and validation is done.26073
+DONE
+DATE: 2013/12/05 12:29:04
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .20
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .60
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .20
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 1436340
+[OVERALL], Throughput(sessions/sec), 2391.8270831945647
+[OVERALL], actcount(actions), 1318398
+[OVERALL], Throughput(actions/sec), 2195.4272963431695
+OVERALLOPCOUNT(SESSIONS):1436340
+OVERALLTHROUGHPUT(SESSIONS/SECS):2391.8270831945647
+OVERALLOPCOUNT(ACTIONS):1318398
+OVERALLTHROUGHPUT(ACTIONS/SECS):2195.4272963431695
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 1436340
+RAMPEDOVERALLOPCOUNT(SESSIONS):1436340
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2391.8270831945647
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2391.8270831945647
+[UntilFirstThreadsDeath], opcount(actions), 1318398
+RAMPEDOVERALLOPCOUNT(ACTIONS):1318398
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2195.4272963431695
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2195.4272963431695
+[OVERALL], Read(ops), 861473
+[OVERALL], StaleRead(ops), 109711
+[OVERALL], Staleness(staleReads/totalReads), 0.12735280153875977
+[OVERALL], Read(sessions), 861473
+[OVERALL], StaleRead(sessions), 109711
+[OVERALL], Staleness(staleSessions/totalSessions), 0.12735280153875977
+[OVERALL], Pruned(ops), 335838
+[OVERALL], Validationtime(ms), 26071
+[OVERALL], DumpAndValidationtime(ms), 26073
+[POSTCOMMENT]NumOperations=287312, AverageResponseTime(us)=641.88, MinResponseTime(us)=398, MaxResponseTime(us)=189356
+ReturnCode:0 numObserved:287312
+[GETRESCOMMENT]NumOperations=861473, AverageResponseTime(us)=329.63, MinResponseTime(us)=164, MaxResponseTime(us)=216245
+ReturnCode:0 numObserved:861473
+[DELCOMMENT]NumOperations=169613, AverageResponseTime(us)=649.88, MinResponseTime(us)=398, MaxResponseTime(us)=293037
+ReturnCode:0 numObserved:169613
+
+Sleep for 15s
+Update rate: .25, Read rate: .50
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :50 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1432
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17825
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.25
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 53 msec
+resested!
+
+After init: Thu Dec 05 12:29:46 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 12:39:47 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):6418
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:373544
+	-- 10 secs: Reads are still being validated... NumPruned till now:209409
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:436061
+	-- 20 secs: Reads are still being validated... NumPruned till now:241238
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20003
+	 TotalReadOps = 677299 ,staleReadOps=69388 ,staleness Perc (gran:user)=0.1024481063754708
+	 TotalSeqRead = 677299 ,staleSeqRead=69388 ,staleness Perc (gran:user)=0.1024481063754708
+******* Discrading, dumping and validation is done.26423
+DONE
+DATE: 2013/12/05 12:40:13
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .25
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .50
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .25
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600521.0
+[OVERALL], opcount(sessions), 1354774
+[OVERALL], Throughput(sessions/sec), 2255.9977086563167
+[OVERALL], actcount(actions), 1223197
+[OVERALL], Throughput(actions/sec), 2036.8929646090644
+OVERALLOPCOUNT(SESSIONS):1354774
+OVERALLTHROUGHPUT(SESSIONS/SECS):2255.9977086563167
+OVERALLOPCOUNT(ACTIONS):1223197
+OVERALLTHROUGHPUT(ACTIONS/SECS):2036.8929646090644
+[UntilFirstThreadsDeath], RunTime(ms), 600521
+[UntilFirstThreadsDeath], opcount(sessions), 1354774
+RAMPEDOVERALLOPCOUNT(SESSIONS):1354774
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2255.9977086563167
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2255.9977086563167
+[UntilFirstThreadsDeath], opcount(actions), 1223197
+RAMPEDOVERALLOPCOUNT(ACTIONS):1223197
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2036.8929646090644
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2036.8929646090644
+[OVERALL], Read(ops), 677299
+[OVERALL], StaleRead(ops), 69388
+[OVERALL], Staleness(staleReads/totalReads), 0.1024481063754708
+[OVERALL], Read(sessions), 677299
+[OVERALL], StaleRead(sessions), 69388
+[OVERALL], Staleness(staleSessions/totalSessions), 0.1024481063754708
+[OVERALL], Pruned(ops), 241238
+[OVERALL], Validationtime(ms), 26422
+[OVERALL], DumpAndValidationtime(ms), 26423
+[POSTCOMMENT]NumOperations=338885, AverageResponseTime(us)=618.35, MinResponseTime(us)=391, MaxResponseTime(us)=347304
+ReturnCode:0 numObserved:338885
+[GETRESCOMMENT]NumOperations=677299, AverageResponseTime(us)=355.44, MinResponseTime(us)=164, MaxResponseTime(us)=182422
+ReturnCode:0 numObserved:677299
+[DELCOMMENT]NumOperations=207013, AverageResponseTime(us)=625.44, MinResponseTime(us)=389, MaxResponseTime(us)=141800
+ReturnCode:0 numObserved:207013
+
+Sleep for 15s
+Update rate: .30, Read rate: .40
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :46 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1436
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17089
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.30
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 53 msec
+resested!
+
+After init: Thu Dec 05 12:40:55 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 12:50:56 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):8510
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:143819
+	-- 10 secs: Reads are still being validated... NumPruned till now:72035
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:367374
+	-- 20 secs: Reads are still being validated... NumPruned till now:172817
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20003
+	 TotalReadOps = 540191 ,staleReadOps=41019 ,staleness Perc (gran:user)=0.07593425288462785
+	 TotalSeqRead = 540191 ,staleSeqRead=41019 ,staleness Perc (gran:user)=0.07593425288462785
+******* Discrading, dumping and validation is done.28516
+DONE
+DATE: 2013/12/05 12:51:24
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .30
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .40
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .30
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600523.0
+[OVERALL], opcount(sessions), 1351774
+[OVERALL], Throughput(sessions/sec), 2250.9945497508006
+[OVERALL], actcount(actions), 1205355
+[OVERALL], Throughput(actions/sec), 2007.1754120991202
+OVERALLOPCOUNT(SESSIONS):1351774
+OVERALLTHROUGHPUT(SESSIONS/SECS):2250.9945497508006
+OVERALLOPCOUNT(ACTIONS):1205355
+OVERALLTHROUGHPUT(ACTIONS/SECS):2007.1754120991202
+[UntilFirstThreadsDeath], RunTime(ms), 600523
+[UntilFirstThreadsDeath], opcount(sessions), 1351774
+RAMPEDOVERALLOPCOUNT(SESSIONS):1351774
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2250.9945497508006
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2250.9945497508006
+[UntilFirstThreadsDeath], opcount(actions), 1205355
+RAMPEDOVERALLOPCOUNT(ACTIONS):1205355
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2007.1754120991202
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2007.1754120991202
+[OVERALL], Read(ops), 540191
+[OVERALL], StaleRead(ops), 41019
+[OVERALL], Staleness(staleReads/totalReads), 0.07593425288462785
+[OVERALL], Read(sessions), 540191
+[OVERALL], StaleRead(sessions), 41019
+[OVERALL], Staleness(staleSessions/totalSessions), 0.07593425288462785
+[OVERALL], Pruned(ops), 172817
+[OVERALL], Validationtime(ms), 28514
+[OVERALL], DumpAndValidationtime(ms), 28516
+[POSTCOMMENT]NumOperations=406058, AverageResponseTime(us)=581.87, MinResponseTime(us)=376, MaxResponseTime(us)=155800
+ReturnCode:0 numObserved:406058
+[GETRESCOMMENT]NumOperations=540191, AverageResponseTime(us)=358.33, MinResponseTime(us)=163, MaxResponseTime(us)=180191
+ReturnCode:0 numObserved:540191
+[DELCOMMENT]NumOperations=259106, AverageResponseTime(us)=586.68, MinResponseTime(us)=386, MaxResponseTime(us)=141511
+ReturnCode:0 numObserved:259106
+
+Sleep for 15s
+Update rate: .35, Read rate: .30
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :44 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1525
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17219
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.35
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 51 msec
+resested!
+
+After init: Thu Dec 05 12:52:07 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 13:02:07 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):8149
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:119286
+	-- 10 secs: Reads are still being validated... NumPruned till now:61212
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:247407
+	-- 20 secs: Reads are still being validated... NumPruned till now:112258
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20003
+	 TotalReadOps = 359665 ,staleReadOps=21726 ,staleness Perc (gran:user)=0.060406211335548354
+	 TotalSeqRead = 359665 ,staleSeqRead=21726 ,staleness Perc (gran:user)=0.060406211335548354
+******* Discrading, dumping and validation is done.28153
+DONE
+DATE: 2013/12/05 13:02:35
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .35
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .30
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .35
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600518.0
+[OVERALL], opcount(sessions), 1197023
+[OVERALL], Throughput(sessions/sec), 1993.3174359469658
+[OVERALL], actcount(actions), 1047258
+[OVERALL], Throughput(actions/sec), 1743.924411924372
+OVERALLOPCOUNT(SESSIONS):1197023
+OVERALLTHROUGHPUT(SESSIONS/SECS):1993.3174359469658
+OVERALLOPCOUNT(ACTIONS):1047258
+OVERALLTHROUGHPUT(ACTIONS/SECS):1743.924411924372
+[UntilFirstThreadsDeath], RunTime(ms), 600518
+[UntilFirstThreadsDeath], opcount(sessions), 1197023
+RAMPEDOVERALLOPCOUNT(SESSIONS):1197023
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 1993.3174359469658
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):1993.3174359469658
+[UntilFirstThreadsDeath], opcount(actions), 1047258
+RAMPEDOVERALLOPCOUNT(ACTIONS):1047258
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1743.924411924372
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1743.924411924372
+[OVERALL], Read(ops), 359665
+[OVERALL], StaleRead(ops), 21726
+[OVERALL], Staleness(staleReads/totalReads), 0.060406211335548354
+[OVERALL], Read(sessions), 359665
+[OVERALL], StaleRead(sessions), 21726
+[OVERALL], Staleness(staleSessions/totalSessions), 0.060406211335548354
+[OVERALL], Pruned(ops), 112258
+[OVERALL], Validationtime(ms), 28152
+[OVERALL], DumpAndValidationtime(ms), 28153
+[POSTCOMMENT]NumOperations=419398, AverageResponseTime(us)=631.43, MinResponseTime(us)=379, MaxResponseTime(us)=495164
+ReturnCode:0 numObserved:419398
+[GETRESCOMMENT]NumOperations=359665, AverageResponseTime(us)=404.78, MinResponseTime(us)=167, MaxResponseTime(us)=188496
+ReturnCode:0 numObserved:359665
+[DELCOMMENT]NumOperations=268195, AverageResponseTime(us)=640.57, MinResponseTime(us)=395, MaxResponseTime(us)=325201
+ReturnCode:0 numObserved:268195
+
+Sleep for 15s
+Update rate: .40, Read rate: .20
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :46 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1800
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18534
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.40
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 53 msec
+resested!
+
+After init: Thu Dec 05 13:03:18 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 13:13:19 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):8778
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:141565
+	-- 10 secs: Reads are still being validated... NumPruned till now:57722
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:175099
+	-- 20 secs: Reads are still being validated... NumPruned till now:68936
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20002
+	 TotalReadOps = 244035 ,staleReadOps=9785 ,staleness Perc (gran:user)=0.04009670743950663
+	 TotalSeqRead = 244035 ,staleSeqRead=9785 ,staleness Perc (gran:user)=0.04009670743950663
+******* Discrading, dumping and validation is done.28782
+DONE
+DATE: 2013/12/05 13:13:47
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .40
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .20
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .40
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600521.0
+[OVERALL], opcount(sessions), 1216968
+[OVERALL], Throughput(sessions/sec), 2026.5203048686058
+[OVERALL], actcount(actions), 1052082
+[OVERALL], Throughput(actions/sec), 1751.9487245242049
+OVERALLOPCOUNT(SESSIONS):1216968
+OVERALLTHROUGHPUT(SESSIONS/SECS):2026.5203048686058
+OVERALLOPCOUNT(ACTIONS):1052082
+OVERALLTHROUGHPUT(ACTIONS/SECS):1751.9487245242049
+[UntilFirstThreadsDeath], RunTime(ms), 600521
+[UntilFirstThreadsDeath], opcount(sessions), 1216968
+RAMPEDOVERALLOPCOUNT(SESSIONS):1216968
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2026.5203048686058
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2026.5203048686058
+[UntilFirstThreadsDeath], opcount(actions), 1052082
+RAMPEDOVERALLOPCOUNT(ACTIONS):1052082
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1751.9487245242049
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1751.9487245242049
+[OVERALL], Read(ops), 244035
+[OVERALL], StaleRead(ops), 9785
+[OVERALL], Staleness(staleReads/totalReads), 0.04009670743950663
+[OVERALL], Read(sessions), 244035
+[OVERALL], StaleRead(sessions), 9785
+[OVERALL], Staleness(staleSessions/totalSessions), 0.04009670743950663
+[OVERALL], Pruned(ops), 68936
+[OVERALL], Validationtime(ms), 28781
+[OVERALL], DumpAndValidationtime(ms), 28782
+[POSTCOMMENT]NumOperations=486320, AverageResponseTime(us)=595.24, MinResponseTime(us)=374, MaxResponseTime(us)=307832
+ReturnCode:0 numObserved:486320
+[GETRESCOMMENT]NumOperations=244035, AverageResponseTime(us)=415.58, MinResponseTime(us)=141, MaxResponseTime(us)=183514
+ReturnCode:0 numObserved:244035
+[DELCOMMENT]NumOperations=321727, AverageResponseTime(us)=598.39, MinResponseTime(us)=387, MaxResponseTime(us)=196801
+ReturnCode:0 numObserved:321727
+
+Stop requested for workload. Now Joining!
+
+Sleep for 15s
+Update rate: .45, Read rate: .10
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :48 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1920
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18499
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.45
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 50 msec
+resested!
+
+After init: Thu Dec 05 13:14:29 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 13:24:30 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):9334
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:79007
+	-- 10 secs: Reads are still being validated... NumPruned till now:31010
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):10002
+	 TotalReadOps = 110017 ,staleReadOps=3029 ,staleness Perc (gran:user)=0.027532108674114
+	 TotalSeqRead = 110017 ,staleSeqRead=3029 ,staleness Perc (gran:user)=0.027532108674114
+******* Discrading, dumping and validation is done.19338
+DONE
+DATE: 2013/12/05 13:24:50
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .45
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .10
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .45
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600519.0
+[OVERALL], opcount(sessions), 1094194
+[OVERALL], Throughput(sessions/sec), 1822.0805669762321
+[OVERALL], actcount(actions), 928534
+[OVERALL], Throughput(actions/sec), 1546.2191870698512
+OVERALLOPCOUNT(SESSIONS):1094194
+OVERALLTHROUGHPUT(SESSIONS/SECS):1822.0805669762321
+OVERALLOPCOUNT(ACTIONS):928534
+OVERALLTHROUGHPUT(ACTIONS/SECS):1546.2191870698512
+[UntilFirstThreadsDeath], RunTime(ms), 600519
+[UntilFirstThreadsDeath], opcount(sessions), 1094194
+RAMPEDOVERALLOPCOUNT(SESSIONS):1094194
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 1822.0805669762321
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):1822.0805669762321
+[UntilFirstThreadsDeath], opcount(actions), 928534
+RAMPEDOVERALLOPCOUNT(ACTIONS):928534
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1546.2191870698512
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1546.2191870698512
+[OVERALL], Read(ops), 110017
+[OVERALL], StaleRead(ops), 3029
+[OVERALL], Staleness(staleReads/totalReads), 0.027532108674114
+[OVERALL], Read(sessions), 110017
+[OVERALL], StaleRead(sessions), 3029
+[OVERALL], Staleness(staleSessions/totalSessions), 0.027532108674114
+[OVERALL], Pruned(ops), 31010
+[OVERALL], Validationtime(ms), 19337
+[OVERALL], DumpAndValidationtime(ms), 19338
+[POSTCOMMENT]NumOperations=492756, AverageResponseTime(us)=659.37, MinResponseTime(us)=376, MaxResponseTime(us)=984896
+ReturnCode:0 numObserved:492756
+[GETRESCOMMENT]NumOperations=110017, AverageResponseTime(us)=447.28, MinResponseTime(us)=142, MaxResponseTime(us)=145443
+ReturnCode:0 numObserved:110017
+[DELCOMMENT]NumOperations=325761, AverageResponseTime(us)=646.36, MinResponseTime(us)=390, MaxResponseTime(us)=506539
+ReturnCode:0 numObserved:325761
+
+Sleep for 15s
+Update rate: .50, Read rate: 0
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :45 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1422
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18591
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.50
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 56 msec
+resested!
+
+After init: Thu Dec 05 13:25:32 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 19:06:04 EST 2013
+DONE
+DATE: 2013/12/05 19:06:04
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .50
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: 0
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .50
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 2.0432022E7
+[OVERALL], opcount(sessions), 957824
+[OVERALL], Throughput(sessions/sec), 46.878571293629186
+[OVERALL], actcount(actions), 794567
+[OVERALL], Throughput(actions/sec), 38.88831952119081
+OVERALLOPCOUNT(SESSIONS):957824
+OVERALLTHROUGHPUT(SESSIONS/SECS):46.878571293629186
+OVERALLOPCOUNT(ACTIONS):794567
+OVERALLTHROUGHPUT(ACTIONS/SECS):38.88831952119081
+[UntilFirstThreadsDeath], RunTime(ms), 20432022
+[UntilFirstThreadsDeath], opcount(sessions), 957824
+RAMPEDOVERALLOPCOUNT(SESSIONS):957824
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 46.878571293629186
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):46.878571293629186
+[UntilFirstThreadsDeath], opcount(actions), 794567
+RAMPEDOVERALLOPCOUNT(ACTIONS):794567
+[UntilFirstThreadsDeath], Throughput(actions/sec), 38.88831952119081
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):38.88831952119081
+[POSTCOMMENT]NumOperations=479095, AverageResponseTime(us)=-2644.96, MinResponseTime(us)=391, MaxResponseTime(us)=401646683
+ReturnCode:0 numObserved:479095
+[DELCOMMENT]NumOperations=315472, AverageResponseTime(us)=664.07, MinResponseTime(us)=389, MaxResponseTime(us)=1462150
+ReturnCode:0 numObserved:315472
+
+Sleep for 15s
+67-194-43-102:BG dliu$ ./bashtest.sh 
+Update rate: 0.0, Read rate: 1.0
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1233
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17757
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+0.0
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 50 msec
+resested!
+
+After init: Thu Dec 05 19:10:00 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 19:20:00 EST 2013
+DONE
+DATE: 2013/12/05 19:20:00
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: 0.0
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: 1.0
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: 0.0
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 2375902
+[OVERALL], Throughput(sessions/sec), 3956.407779924066
+[OVERALL], actcount(actions), 2375902
+[OVERALL], Throughput(actions/sec), 3956.407779924066
+OVERALLOPCOUNT(SESSIONS):2375902
+OVERALLTHROUGHPUT(SESSIONS/SECS):3956.407779924066
+OVERALLOPCOUNT(ACTIONS):2375902
+OVERALLTHROUGHPUT(ACTIONS/SECS):3956.407779924066
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 2375902
+RAMPEDOVERALLOPCOUNT(SESSIONS):2375902
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 3956.407779924066
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):3956.407779924066
+[UntilFirstThreadsDeath], opcount(actions), 2375902
+RAMPEDOVERALLOPCOUNT(ACTIONS):2375902
+[UntilFirstThreadsDeath], Throughput(actions/sec), 3956.407779924066
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):3956.407779924066
+[GETRESCOMMENT]NumOperations=2375902, AverageResponseTime(us)=242.06, MinResponseTime(us)=190, MaxResponseTime(us)=26316
+ReturnCode:0 numObserved:2375902
+
+Sleep for 15s
+Update rate: .05, Read rate: .90
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :56 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1210
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=19394
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.05
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 55 msec
+resested!
+
+After init: Thu Dec 05 19:20:41 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 19:30:42 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):1347
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:181655
+	-- 10 secs: Reads are still being validated... NumPruned till now:298896
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:469303
+	-- 20 secs: Reads are still being validated... NumPruned till now:692501
+Stop requested for workload. Now Joining!
+	-- 30 secs: Reads are still being validated... NumReadOpsProcessed till now:711049
+	-- 30 secs: Reads are still being validated... NumPruned till now:1052793
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):30161
+	 TotalReadOps = 1763842 ,staleReadOps=4571 ,staleness Perc (gran:user)=0.002591501959926116
+	 TotalSeqRead = 1763842 ,staleSeqRead=4571 ,staleness Perc (gran:user)=0.002591501959926116
+******* Discrading, dumping and validation is done.31510
+DONE
+DATE: 2013/12/05 19:31:13
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .05
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .90
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .05
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600518.0
+[OVERALL], opcount(sessions), 1959560
+[OVERALL], Throughput(sessions/sec), 3263.116176367736
+[OVERALL], actcount(actions), 1904012
+[OVERALL], Throughput(actions/sec), 3170.6160348232693
+OVERALLOPCOUNT(SESSIONS):1959560
+OVERALLTHROUGHPUT(SESSIONS/SECS):3263.116176367736
+OVERALLOPCOUNT(ACTIONS):1904012
+OVERALLTHROUGHPUT(ACTIONS/SECS):3170.6160348232693
+[UntilFirstThreadsDeath], RunTime(ms), 600518
+[UntilFirstThreadsDeath], opcount(sessions), 1959560
+RAMPEDOVERALLOPCOUNT(SESSIONS):1959560
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 3263.116176367736
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):3263.116176367736
+[UntilFirstThreadsDeath], opcount(actions), 1904012
+RAMPEDOVERALLOPCOUNT(ACTIONS):1904012
+[UntilFirstThreadsDeath], Throughput(actions/sec), 3170.6160348232693
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):3170.6160348232693
+[OVERALL], Read(ops), 1763842
+[OVERALL], StaleRead(ops), 4571
+[OVERALL], Staleness(staleReads/totalReads), 0.002591501959926116
+[OVERALL], Read(sessions), 1763842
+[OVERALL], StaleRead(sessions), 4571
+[OVERALL], Staleness(staleSessions/totalSessions), 0.002591501959926116
+[OVERALL], Pruned(ops), 1052793
+[OVERALL], Validationtime(ms), 31508
+[OVERALL], DumpAndValidationtime(ms), 31510
+[POSTCOMMENT]NumOperations=97633, AverageResponseTime(us)=787.9, MinResponseTime(us)=406, MaxResponseTime(us)=212972
+ReturnCode:0 numObserved:97633
+[GETRESCOMMENT]NumOperations=1763842, AverageResponseTime(us)=262.48, MinResponseTime(us)=184, MaxResponseTime(us)=182633
+ReturnCode:0 numObserved:1763842
+[DELCOMMENT]NumOperations=42537, AverageResponseTime(us)=776.31, MinResponseTime(us)=428, MaxResponseTime(us)=255762
+ReturnCode:0 numObserved:42537
+
+Sleep for 15s
+Update rate: .10, Read rate: .80
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :47 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1386
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+20 Seconds:  Load is in progress
+Done doing load sanity check
+LoadTime (msec)=19668
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+30 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.10
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 54 msec
+resested!
+
+After init: Thu Dec 05 19:32:06 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 19:42:07 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):2878
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:86312
+	-- 10 secs: Reads are still being validated... NumPruned till now:99078
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:519377
+	-- 20 secs: Reads are still being validated... NumPruned till now:490355
+Stop requested for workload. Now Joining!
+	-- 30 secs: Reads are still being validated... NumReadOpsProcessed till now:668591
+	-- 30 secs: Reads are still being validated... NumPruned till now:664251
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):30355
+	 TotalReadOps = 1332842 ,staleReadOps=169627 ,staleness Perc (gran:user)=0.12726714794401736
+	 TotalSeqRead = 1332842 ,staleSeqRead=169627 ,staleness Perc (gran:user)=0.12726714794401736
+******* Discrading, dumping and validation is done.33235
+DONE
+DATE: 2013/12/05 19:42:40
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .10
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .80
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .10
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600517.0
+[OVERALL], opcount(sessions), 1666333
+[OVERALL], Throughput(sessions/sec), 2774.8306875575545
+[OVERALL], actcount(actions), 1585199
+[OVERALL], Throughput(actions/sec), 2639.723771350353
+OVERALLOPCOUNT(SESSIONS):1666333
+OVERALLTHROUGHPUT(SESSIONS/SECS):2774.8306875575545
+OVERALLOPCOUNT(ACTIONS):1585199
+OVERALLTHROUGHPUT(ACTIONS/SECS):2639.723771350353
+[UntilFirstThreadsDeath], RunTime(ms), 600517
+[UntilFirstThreadsDeath], opcount(sessions), 1666333
+RAMPEDOVERALLOPCOUNT(SESSIONS):1666333
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2774.8306875575545
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2774.8306875575545
+[UntilFirstThreadsDeath], opcount(actions), 1585199
+RAMPEDOVERALLOPCOUNT(ACTIONS):1585199
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2639.723771350353
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2639.723771350353
+[OVERALL], Read(ops), 1332842
+[OVERALL], StaleRead(ops), 169627
+[OVERALL], Staleness(staleReads/totalReads), 0.12726714794401736
+[OVERALL], Read(sessions), 1332842
+[OVERALL], StaleRead(sessions), 169627
+[OVERALL], Staleness(staleSessions/totalSessions), 0.12726714794401736
+[OVERALL], Pruned(ops), 664251
+[OVERALL], Validationtime(ms), 33234
+[OVERALL], DumpAndValidationtime(ms), 33235
+[POSTCOMMENT]NumOperations=166494, AverageResponseTime(us)=798.52, MinResponseTime(us)=383, MaxResponseTime(us)=757630
+ReturnCode:0 numObserved:166494
+[GETRESCOMMENT]NumOperations=1332842, AverageResponseTime(us)=281.62, MinResponseTime(us)=187, MaxResponseTime(us)=207019
+ReturnCode:0 numObserved:1332842
+[DELCOMMENT]NumOperations=85863, AverageResponseTime(us)=789.72, MinResponseTime(us)=423, MaxResponseTime(us)=250516
+ReturnCode:0 numObserved:85863
+
+Sleep for 15s
+Update rate: .15, Read rate: .70
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :54 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+20 Seconds:  Load is in progress
+Time to build database index structures(ms):1702
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=20689
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+30 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.15
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 58 msec
+resested!
+
+After init: Thu Dec 05 19:43:33 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 19:53:34 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):4870
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:121392
+	-- 10 secs: Reads are still being validated... NumPruned till now:96544
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:651316
+	-- 20 secs: Reads are still being validated... NumPruned till now:478424
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):21447
+	 TotalReadOps = 1129740 ,staleReadOps=157595 ,staleness Perc (gran:user)=0.13949669835537382
+	 TotalSeqRead = 1129740 ,staleSeqRead=157595 ,staleness Perc (gran:user)=0.13949669835537382
+******* Discrading, dumping and validation is done.26319
+DONE
+DATE: 2013/12/05 19:54:00
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .15
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .70
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .15
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600524.0
+[OVERALL], opcount(sessions), 1613624
+[OVERALL], Throughput(sessions/sec), 2687.0266633806477
+[OVERALL], actcount(actions), 1509115
+[OVERALL], Throughput(actions/sec), 2512.9969826351653
+OVERALLOPCOUNT(SESSIONS):1613624
+OVERALLTHROUGHPUT(SESSIONS/SECS):2687.0266633806477
+OVERALLOPCOUNT(ACTIONS):1509115
+OVERALLTHROUGHPUT(ACTIONS/SECS):2512.9969826351653
+[UntilFirstThreadsDeath], RunTime(ms), 600524
+[UntilFirstThreadsDeath], opcount(sessions), 1613624
+RAMPEDOVERALLOPCOUNT(SESSIONS):1613624
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2687.0266633806477
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2687.0266633806477
+[UntilFirstThreadsDeath], opcount(actions), 1509115
+RAMPEDOVERALLOPCOUNT(ACTIONS):1509115
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2512.9969826351653
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2512.9969826351653
+[OVERALL], Read(ops), 1129740
+[OVERALL], StaleRead(ops), 157595
+[OVERALL], Staleness(staleReads/totalReads), 0.13949669835537382
+[OVERALL], Read(sessions), 1129740
+[OVERALL], StaleRead(sessions), 157595
+[OVERALL], Staleness(staleSessions/totalSessions), 0.13949669835537382
+[OVERALL], Pruned(ops), 478424
+[OVERALL], Validationtime(ms), 26317
+[OVERALL], DumpAndValidationtime(ms), 26319
+[POSTCOMMENT]NumOperations=242305, AverageResponseTime(us)=636.61, MinResponseTime(us)=387, MaxResponseTime(us)=193401
+ReturnCode:0 numObserved:242305
+[GETRESCOMMENT]NumOperations=1129740, AverageResponseTime(us)=297.16, MinResponseTime(us)=182, MaxResponseTime(us)=169514
+ReturnCode:0 numObserved:1129740
+[DELCOMMENT]NumOperations=137070, AverageResponseTime(us)=646.71, MinResponseTime(us)=398, MaxResponseTime(us)=185642
+ReturnCode:0 numObserved:137070
+
+Sleep for 15s
+Update rate: .20, Read rate: .60
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :49 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1274
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=16823
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.20
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 49 msec
+resested!
+
+After init: Thu Dec 05 19:54:42 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 20:04:43 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):5222
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:176603
+	-- 10 secs: Reads are still being validated... NumPruned till now:112285
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:583739
+	-- 20 secs: Reads are still being validated... NumPruned till now:350123
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20004
+	 TotalReadOps = 933862 ,staleReadOps=113447 ,staleness Perc (gran:user)=0.12148154652400461
+	 TotalSeqRead = 933862 ,staleSeqRead=113447 ,staleness Perc (gran:user)=0.12148154652400461
+******* Discrading, dumping and validation is done.25227
+DONE
+DATE: 2013/12/05 20:05:08
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .20
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .60
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .20
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600518.0
+[OVERALL], opcount(sessions), 1555611
+[OVERALL], Throughput(sessions/sec), 2590.448579393124
+[OVERALL], actcount(actions), 1431388
+[OVERALL], Throughput(actions/sec), 2383.5888349724737
+OVERALLOPCOUNT(SESSIONS):1555611
+OVERALLTHROUGHPUT(SESSIONS/SECS):2590.448579393124
+OVERALLOPCOUNT(ACTIONS):1431388
+OVERALLTHROUGHPUT(ACTIONS/SECS):2383.5888349724737
+[UntilFirstThreadsDeath], RunTime(ms), 600518
+[UntilFirstThreadsDeath], opcount(sessions), 1555611
+RAMPEDOVERALLOPCOUNT(SESSIONS):1555611
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2590.448579393124
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2590.448579393124
+[UntilFirstThreadsDeath], opcount(actions), 1431388
+RAMPEDOVERALLOPCOUNT(ACTIONS):1431388
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2383.5888349724737
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2383.5888349724737
+[OVERALL], Read(ops), 933862
+[OVERALL], StaleRead(ops), 113447
+[OVERALL], Staleness(staleReads/totalReads), 0.12148154652400461
+[OVERALL], Read(sessions), 933862
+[OVERALL], StaleRead(sessions), 113447
+[OVERALL], Staleness(staleSessions/totalSessions), 0.12148154652400461
+[OVERALL], Pruned(ops), 350123
+[OVERALL], Validationtime(ms), 25226
+[OVERALL], DumpAndValidationtime(ms), 25227
+[POSTCOMMENT]NumOperations=310580, AverageResponseTime(us)=586.04, MinResponseTime(us)=402, MaxResponseTime(us)=342731
+ReturnCode:0 numObserved:310580
+[GETRESCOMMENT]NumOperations=933862, AverageResponseTime(us)=307.62, MinResponseTime(us)=187, MaxResponseTime(us)=186796
+ReturnCode:0 numObserved:933862
+[DELCOMMENT]NumOperations=186946, AverageResponseTime(us)=595.21, MinResponseTime(us)=396, MaxResponseTime(us)=155570
+ReturnCode:0 numObserved:186946
+
+Sleep for 15s
+Update rate: .25, Read rate: .50
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :45 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1695
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17615
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.25
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 53 msec
+resested!
+
+After init: Thu Dec 05 20:05:50 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 20:15:50 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):6414
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:56805
+	-- 10 secs: Reads are still being validated... NumPruned till now:33776
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:462804
+	-- 20 secs: Reads are still being validated... NumPruned till now:247739
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20004
+	 TotalReadOps = 710543 ,staleReadOps=71085 ,staleness Perc (gran:user)=0.1000432063928573
+	 TotalSeqRead = 710543 ,staleSeqRead=71085 ,staleness Perc (gran:user)=0.1000432063928573
+******* Discrading, dumping and validation is done.26420
+DONE
+DATE: 2013/12/05 20:16:17
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .25
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .50
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .25
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600518.0
+[OVERALL], opcount(sessions), 1419685
+[OVERALL], Throughput(sessions/sec), 2364.1006597637374
+[OVERALL], actcount(actions), 1284244
+[OVERALL], Throughput(actions/sec), 2138.5603762085398
+OVERALLOPCOUNT(SESSIONS):1419685
+OVERALLTHROUGHPUT(SESSIONS/SECS):2364.1006597637374
+OVERALLOPCOUNT(ACTIONS):1284244
+OVERALLTHROUGHPUT(ACTIONS/SECS):2138.5603762085398
+[UntilFirstThreadsDeath], RunTime(ms), 600518
+[UntilFirstThreadsDeath], opcount(sessions), 1419685
+RAMPEDOVERALLOPCOUNT(SESSIONS):1419685
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2364.1006597637374
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2364.1006597637374
+[UntilFirstThreadsDeath], opcount(actions), 1284244
+RAMPEDOVERALLOPCOUNT(ACTIONS):1284244
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2138.5603762085398
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2138.5603762085398
+[OVERALL], Read(ops), 710543
+[OVERALL], StaleRead(ops), 71085
+[OVERALL], Staleness(staleReads/totalReads), 0.1000432063928573
+[OVERALL], Read(sessions), 710543
+[OVERALL], StaleRead(sessions), 71085
+[OVERALL], Staleness(staleSessions/totalSessions), 0.1000432063928573
+[OVERALL], Pruned(ops), 247739
+[OVERALL], Validationtime(ms), 26418
+[OVERALL], DumpAndValidationtime(ms), 26420
+[POSTCOMMENT]NumOperations=354262, AverageResponseTime(us)=609.93, MinResponseTime(us)=392, MaxResponseTime(us)=485485
+ReturnCode:0 numObserved:354262
+[GETRESCOMMENT]NumOperations=710543, AverageResponseTime(us)=328.06, MinResponseTime(us)=186, MaxResponseTime(us)=177992
+ReturnCode:0 numObserved:710543
+[DELCOMMENT]NumOperations=219439, AverageResponseTime(us)=603.24, MinResponseTime(us)=392, MaxResponseTime(us)=206087
+ReturnCode:0 numObserved:219439
+
+Sleep for 15s
+Update rate: .30, Read rate: .40
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :47 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1616
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17599
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.30
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 51 msec
+resested!
+
+After init: Thu Dec 05 20:16:58 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 20:26:59 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):8253
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:121941
+	-- 10 secs: Reads are still being validated... NumPruned till now:62887
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:372891
+	-- 20 secs: Reads are still being validated... NumPruned till now:173770
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20007
+	 TotalReadOps = 546661 ,staleReadOps=41612 ,staleness Perc (gran:user)=0.07612030124702512
+	 TotalSeqRead = 546661 ,staleSeqRead=41612 ,staleness Perc (gran:user)=0.07612030124702512
+******* Discrading, dumping and validation is done.28261
+DONE
+DATE: 2013/12/05 20:27:27
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .30
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .40
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .30
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600518.0
+[OVERALL], opcount(sessions), 1366264
+[OVERALL], Throughput(sessions/sec), 2275.1424603425708
+[OVERALL], actcount(actions), 1217650
+[OVERALL], Throughput(actions/sec), 2027.666114920785
+OVERALLOPCOUNT(SESSIONS):1366264
+OVERALLTHROUGHPUT(SESSIONS/SECS):2275.1424603425708
+OVERALLOPCOUNT(ACTIONS):1217650
+OVERALLTHROUGHPUT(ACTIONS/SECS):2027.666114920785
+[UntilFirstThreadsDeath], RunTime(ms), 600518
+[UntilFirstThreadsDeath], opcount(sessions), 1366264
+RAMPEDOVERALLOPCOUNT(SESSIONS):1366264
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2275.1424603425708
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2275.1424603425708
+[UntilFirstThreadsDeath], opcount(actions), 1217650
+RAMPEDOVERALLOPCOUNT(ACTIONS):1217650
+[UntilFirstThreadsDeath], Throughput(actions/sec), 2027.666114920785
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):2027.666114920785
+[OVERALL], Read(ops), 546661
+[OVERALL], StaleRead(ops), 41612
+[OVERALL], Staleness(staleReads/totalReads), 0.07612030124702512
+[OVERALL], Read(sessions), 546661
+[OVERALL], StaleRead(sessions), 41612
+[OVERALL], Staleness(staleSessions/totalSessions), 0.07612030124702512
+[OVERALL], Pruned(ops), 173770
+[OVERALL], Validationtime(ms), 28260
+[OVERALL], DumpAndValidationtime(ms), 28261
+[POSTCOMMENT]NumOperations=409726, AverageResponseTime(us)=579.87, MinResponseTime(us)=383, MaxResponseTime(us)=275039
+ReturnCode:0 numObserved:409726
+[GETRESCOMMENT]NumOperations=546661, AverageResponseTime(us)=351.6, MinResponseTime(us)=189, MaxResponseTime(us)=180713
+ReturnCode:0 numObserved:546661
+[DELCOMMENT]NumOperations=261263, AverageResponseTime(us)=583.72, MinResponseTime(us)=390, MaxResponseTime(us)=180831
+ReturnCode:0 numObserved:261263
+
+Sleep for 15s
+Update rate: .35, Read rate: .30
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :46 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1619
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17472
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.35
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 53 msec
+resested!
+
+After init: Thu Dec 05 20:28:09 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 20:38:09 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):8298
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:131332
+	-- 10 secs: Reads are still being validated... NumPruned till now:60215
+	-- 20 secs: Reads are still being validated... NumReadOpsProcessed till now:272465
+	-- 20 secs: Reads are still being validated... NumPruned till now:114926
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):20003
+	 TotalReadOps = 387391 ,staleReadOps=22208 ,staleness Perc (gran:user)=0.05732709329850203
+	 TotalSeqRead = 387391 ,staleSeqRead=22208 ,staleness Perc (gran:user)=0.05732709329850203
+******* Discrading, dumping and validation is done.28304
+DONE
+DATE: 2013/12/05 20:38:38
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .35
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .30
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .35
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 1289442
+[OVERALL], Throughput(sessions/sec), 2147.2090854592684
+[OVERALL], actcount(actions), 1131761
+[OVERALL], Throughput(actions/sec), 1884.6349830147205
+OVERALLOPCOUNT(SESSIONS):1289442
+OVERALLTHROUGHPUT(SESSIONS/SECS):2147.2090854592684
+OVERALLOPCOUNT(ACTIONS):1131761
+OVERALLTHROUGHPUT(ACTIONS/SECS):1884.6349830147205
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 1289442
+RAMPEDOVERALLOPCOUNT(SESSIONS):1289442
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2147.2090854592684
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2147.2090854592684
+[UntilFirstThreadsDeath], opcount(actions), 1131761
+RAMPEDOVERALLOPCOUNT(ACTIONS):1131761
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1884.6349830147205
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1884.6349830147205
+[OVERALL], Read(ops), 387391
+[OVERALL], StaleRead(ops), 22208
+[OVERALL], Staleness(staleReads/totalReads), 0.05732709329850203
+[OVERALL], Read(sessions), 387391
+[OVERALL], StaleRead(sessions), 22208
+[OVERALL], Staleness(staleSessions/totalSessions), 0.05732709329850203
+[OVERALL], Pruned(ops), 114926
+[OVERALL], Validationtime(ms), 28302
+[OVERALL], DumpAndValidationtime(ms), 28304
+[POSTCOMMENT]NumOperations=450803, AverageResponseTime(us)=584.84, MinResponseTime(us)=378, MaxResponseTime(us)=252510
+ReturnCode:0 numObserved:450803
+[GETRESCOMMENT]NumOperations=387391, AverageResponseTime(us)=380.24, MinResponseTime(us)=184, MaxResponseTime(us)=178617
+ReturnCode:0 numObserved:387391
+[DELCOMMENT]NumOperations=293567, AverageResponseTime(us)=587.16, MinResponseTime(us)=379, MaxResponseTime(us)=320445
+ReturnCode:0 numObserved:293567
+
+Sleep for 15s
+Update rate: .40, Read rate: .20
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :44 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1654
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=18466
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.40
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 50 msec
+resested!
+
+After init: Thu Dec 05 20:39:20 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 20:49:20 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):9647
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:172910
+	-- 10 secs: Reads are still being validated... NumPruned till now:68701
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):10003
+	 TotalReadOps = 241611 ,staleReadOps=9623 ,staleness Perc (gran:user)=0.039828484630252764
+	 TotalSeqRead = 241611 ,staleSeqRead=9623 ,staleness Perc (gran:user)=0.039828484630252764
+******* Discrading, dumping and validation is done.19652
+DONE
+DATE: 2013/12/05 20:49:40
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .40
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .20
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .40
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 1204769
+[OVERALL], Throughput(sessions/sec), 2006.20961833078
+[OVERALL], actcount(actions), 1041522
+[OVERALL], Throughput(actions/sec), 1734.3668820355692
+OVERALLOPCOUNT(SESSIONS):1204769
+OVERALLTHROUGHPUT(SESSIONS/SECS):2006.20961833078
+OVERALLOPCOUNT(ACTIONS):1041522
+OVERALLTHROUGHPUT(ACTIONS/SECS):1734.3668820355692
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 1204769
+RAMPEDOVERALLOPCOUNT(SESSIONS):1204769
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 2006.20961833078
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):2006.20961833078
+[UntilFirstThreadsDeath], opcount(actions), 1041522
+RAMPEDOVERALLOPCOUNT(ACTIONS):1041522
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1734.3668820355692
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1734.3668820355692
+[OVERALL], Read(ops), 241611
+[OVERALL], StaleRead(ops), 9623
+[OVERALL], Staleness(staleReads/totalReads), 0.039828484630252764
+[OVERALL], Read(sessions), 241611
+[OVERALL], StaleRead(sessions), 9623
+[OVERALL], Staleness(staleSessions/totalSessions), 0.039828484630252764
+[OVERALL], Pruned(ops), 68701
+[OVERALL], Validationtime(ms), 19650
+[OVERALL], DumpAndValidationtime(ms), 19652
+[POSTCOMMENT]NumOperations=481951, AverageResponseTime(us)=605.67, MinResponseTime(us)=387, MaxResponseTime(us)=220961
+ReturnCode:0 numObserved:481951
+[GETRESCOMMENT]NumOperations=241611, AverageResponseTime(us)=413.25, MinResponseTime(us)=147, MaxResponseTime(us)=240242
+ReturnCode:0 numObserved:241611
+[DELCOMMENT]NumOperations=317960, AverageResponseTime(us)=605.36, MinResponseTime(us)=389, MaxResponseTime(us)=240452
+ReturnCode:0 numObserved:317960
+
+Sleep for 15s
+Update rate: .45, Read rate: .10
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :45 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1279
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17324
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.45
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 51 msec
+resested!
+
+After init: Thu Dec 05 20:50:21 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 21:00:22 EST 2013
+--Discarding, dumping and validation starting.
+	-- Starting to read update files...
+	-- Done reading update files..
+	-- UpdateProcessingDuration(ms):9251
+	-- Starting to read the read files...
+	-- Created the validation status thread
+	-- 10 secs: Reads are still being validated... NumReadOpsProcessed till now:85531
+	-- 10 secs: Reads are still being validated... NumPruned till now:31526
+	-- Done reading read files...
+	-- ReadValidationDuration(ms):10002
+	 TotalReadOps = 117057 ,staleReadOps=2922 ,staleness Perc (gran:user)=0.024962197903585434
+	 TotalSeqRead = 117057 ,staleSeqRead=2922 ,staleness Perc (gran:user)=0.024962197903585434
+******* Discrading, dumping and validation is done.19255
+DONE
+DATE: 2013/12/05 21:00:42
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .45
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: .10
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .45
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600520.0
+[OVERALL], opcount(sessions), 1174902
+[OVERALL], Throughput(sessions/sec), 1956.4743888629855
+[OVERALL], actcount(actions), 1000823
+[OVERALL], Throughput(actions/sec), 1666.593951908346
+OVERALLOPCOUNT(SESSIONS):1174902
+OVERALLTHROUGHPUT(SESSIONS/SECS):1956.4743888629855
+OVERALLOPCOUNT(ACTIONS):1000823
+OVERALLTHROUGHPUT(ACTIONS/SECS):1666.593951908346
+[UntilFirstThreadsDeath], RunTime(ms), 600520
+[UntilFirstThreadsDeath], opcount(sessions), 1174902
+RAMPEDOVERALLOPCOUNT(SESSIONS):1174902
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 1956.4743888629855
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):1956.4743888629855
+[UntilFirstThreadsDeath], opcount(actions), 1000823
+RAMPEDOVERALLOPCOUNT(ACTIONS):1000823
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1666.593951908346
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1666.593951908346
+[OVERALL], Read(ops), 117057
+[OVERALL], StaleRead(ops), 2922
+[OVERALL], Staleness(staleReads/totalReads), 0.024962197903585434
+[OVERALL], Read(sessions), 117057
+[OVERALL], StaleRead(sessions), 2922
+[OVERALL], Staleness(staleSessions/totalSessions), 0.024962197903585434
+[OVERALL], Pruned(ops), 31526
+[OVERALL], Validationtime(ms), 19253
+[OVERALL], DumpAndValidationtime(ms), 19255
+[POSTCOMMENT]NumOperations=528581, AverageResponseTime(us)=602.08, MinResponseTime(us)=381, MaxResponseTime(us)=280847
+ReturnCode:0 numObserved:528581
+[GETRESCOMMENT]NumOperations=117057, AverageResponseTime(us)=438.14, MinResponseTime(us)=150, MaxResponseTime(us)=180542
+ReturnCode:0 numObserved:117057
+[DELCOMMENT]NumOperations=355185, AverageResponseTime(us)=605.17, MinResponseTime(us)=383, MaxResponseTime(us)=249500
+ReturnCode:0 numObserved:355185
+
+Sleep for 15s
+Update rate: .50, Read rate: 0
+*****max execution time specified : 0
+BG Client: ThreadCount =1
+
+Loading workload...
+Connected
+Creating data store schema...
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+RID INC dropped
+USERIDINC dropped
+USERIDS dropped
+Table friendship created
+Table manipulation created
+Table resources created
+Schema creation was successful
+*****max execution time specified : 0
+BG Client: ThreadCount =10
+
+Loading workload...
+Connected
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments :46 msecs
+Done dividing users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading users
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done loading friends
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+10 Seconds:  Load is in progress
+Done loading resources
+Done loading manipulation
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Time to build database index structures(ms):1323
+Done creating indexes and closing db connection
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Done doing load sanity check
+LoadTime (msec)=17255
+Load configuration parameters (those missing from the list have default values):
+
+useroffset: 0
+confperc: 1
+resourcecountperuser: 10
+threadcount: 10
+usercount: 10000
+friendshipworkload: edu.usc.bg.workloads.FriendshipWorkload
+requestmean: 0.27
+requestdistribution: dzipfian
+resourceworkload: edu.usc.bg.workloads.ResourceWorkload
+friendcountperuser: 10
+userworkload: edu.usc.bg.workloads.UserWorkload
+db: memcached.WhalinMemcachedBGClient
+ 
+ Stats queried from the data store: 
+	 MemberCount=10000
+	 ResourceCountPerUser=10
+	 FriendCountPerUser=10
+	 PendingCountPerUser=0
+20 Seconds:  Load is in progress
+state thread came out of while
+load state thread exited
+Loading datastore completed.
+*****max execution time specified : 600
+BG Client: ThreadCount =1
+
+Loading workload...
+.50
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Create fragments in workload init phase
+Creating the initial zipfian probabilities...
+Sum of original probs = 0.9999999999999961
+Initial Zipfian probabilities are created.
+Done creating clusters.
+ClusterId0, 10000
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431967, initial probability.
+ZipfianMean=0.27 Usercount=10000 numMaxClusters=1; 20.0% of members have, 0.6207969279431991 clustering(new)probability.
+Time to create fragments : 49 msec
+resested!
+
+After init: Thu Dec 05 21:01:23 EST 2013
+Connected
+Starting benchmark.
+Adding shard node URL: jdbc:mysql://127.0.0.1:3306/testmemcached
+Maximum execution time specified as: 600 secs
+Maximum time elapsed. Requesting stop for the workload.1
+Stop request is set to :true
+killerThread died
+monitoringThread died
+statusThread died
+
+After workload done: Thu Dec 05 21:11:24 EST 2013
+DONE
+DATE: 2013/12/05 21:11:24
+Runtime configuration parameters (those missing from the list have default values):
+
+ViewFriendReqAction: 0
+DeleteCommentOnResourceAction: .50
+InviteFrdSession: 0
+enablelogging: true
+ViewTopKResourcesAction: 0
+initialfriendsperuser: 10
+initialresourcesperuser: 10
+DeleteCmtOnResSession: 0
+initapproach: deterministic
+zipfianmean: 0.27
+useroffset: 0
+RejectFriendReqAction: 0
+db: memcached.WhalinMemcachedBGClient
+initialpendingsperuser: 0
+requestdistribution: dzipfian
+AcceptFriendReqAction: 0
+friendcountperuser: 10
+ViewProfileAction: 0
+InviteFriendAction: 0
+resourcecountperuser: 10
+ViewCommentsOnResourceAction: 0
+ThawFrdshipSession: 0
+PostCommentOnResourceAction: .50
+ThawFriendshipAction: 0
+numloadthreads: 10
+ListFriendsAction: 0
+AcceptFrdReqSession: 0
+usercount: 10000
+validationapproach: interval
+ViewSelfProfileSession: 0
+ViewFrdProfileSession: 0
+PostCmtOnResSession: 0
+initialmembercount: 10000
+maxexecutiontime: 600
+confperc: 1
+RejectFrdReqSession: 0
+workload: edu.usc.bg.workloads.CoreWorkload
+Sanity Init parameters:
+sanityMemberCount=10000 ,sanityAvgFriendsPerUserCount=10 ,sanityAvgPendingsPerUserCount=0 ,sanityResourcePerUserCount=10
+[OVERALL], RunTime(ms), 600521.0
+[OVERALL], opcount(sessions), 1118893
+[OVERALL], Throughput(sessions/sec), 1863.203784713607
+[OVERALL], actcount(actions), 938154
+[OVERALL], Throughput(actions/sec), 1562.2334606117022
+OVERALLOPCOUNT(SESSIONS):1118893
+OVERALLTHROUGHPUT(SESSIONS/SECS):1863.203784713607
+OVERALLOPCOUNT(ACTIONS):938154
+OVERALLTHROUGHPUT(ACTIONS/SECS):1562.2334606117022
+[UntilFirstThreadsDeath], RunTime(ms), 600521
+[UntilFirstThreadsDeath], opcount(sessions), 1118893
+RAMPEDOVERALLOPCOUNT(SESSIONS):1118893
+[UntilFirstThreadsDeath], Throughput(sessions/sec), 1863.203784713607
+RAMPEDOVERALLTHROUGHPUT(SESSIONS/SECS):1863.203784713607
+[UntilFirstThreadsDeath], opcount(actions), 938154
+RAMPEDOVERALLOPCOUNT(ACTIONS):938154
+[UntilFirstThreadsDeath], Throughput(actions/sec), 1562.2334606117022
+RAMPEDOVERALLTHROUGHPUT(ACTIONS/SECS):1562.2334606117022
+[POSTCOMMENT]NumOperations=558834, AverageResponseTime(us)=623.26, MinResponseTime(us)=380, MaxResponseTime(us)=357257
+ReturnCode:0 numObserved:558834
+[DELCOMMENT]NumOperations=379320, AverageResponseTime(us)=623.8, MinResponseTime(us)=380, MaxResponseTime(us)=264906
+ReturnCode:0 numObserved:379320
+
+
+Sleep for 15s
+67-194-43-102:BG dliu$ 

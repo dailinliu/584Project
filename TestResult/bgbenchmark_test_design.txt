@@ -1,0 +1,15 @@
+bg benchmark 实验设计
+
+1. original memcached
+
+10s, 20s, ..., 10min, staleness + throughput (updaterate=0.25)
+
+2. GT memcached with constant delta
+
+10s, 20s, ..., 10min, staleness + throughput (updaterate=0.25)
+10min with different update/read rate, staleness + throughput
+
+3. GT memecached with dynamic delta
+
+10s, 20s, ..., 10min, staleness + throughput (updaterate=0.25) (v)
+10min with different update/read rate, staleness + throughput (v)
