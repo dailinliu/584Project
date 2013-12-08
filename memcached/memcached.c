@@ -122,9 +122,17 @@ enum transmit_result {
 static enum transmit_result transmit(conn *c);
 
 /* Delta T for gumball time life cycle. In milliseconde. */
-static const gum_time_t delta_time = 500;
+static gum_time_t delta_time = 500;
 /* Time when gumball expires. */
 static const rel_time_t expire_time = 1;
+/* Alpha for delta adjustment */
+static const float alpha = 1.1;
+/* RT_MAX */
+gum_time_t RT_MAX = 500;
+/* adjust_time, used for delta adjustment */
+gum_time_t adjust_time = 0;
+/* last_judge, timestamp used for delta adjustment */
+gum_time_t last_judge = 0;
 
 /* Implement get_system_time */
 static gum_time_t getSystemTime() {
@@ -2968,33 +2976,39 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     }
     
 //TODO: need to define::: alpha = 1.1 , RT_MAX = 0, adjust_time, last_judge,
-    if(current_time - last_judge > 60){
-        //TODO:lock	
+    /*if(current_time - last_judge > 60){
+        //TODO:lock
+        pthread_mutex_lock(&c->thread->stats.mutex);
         last_judge = current_time;
 	    if(RT_MAX * alpha < delta_time) {
 		    
 		    delta_time = RT_MAX * alpha;
-		    RT_MAX = current_time - misstime;
+		    RT_MAX = current_time - miss_time;
 	    }
+        pthread_mutex_unlock(&c->thread->stats.mutex);
         //TODO:unlock
     }
     if(current_time - miss_time > RT_MAX){
 	    //TODO:lock
+        pthread_mutex_lock(&c->thread->stats.mutex);
 	    RT_MAX = current_time - miss_time;
+        pthread_mutex_unlock(&c->thread->stats.mutex);
 	    //TODO:unlock
-    }
+    }*/
     /* Check the following cases */
     /* 1. Tc - Tmiss > delta */
     if (miss_time > current_time) //use >
         return;
     if (miss_time != 0 && current_time - miss_time > delta_time) {
         //expand_delta
-        if(miss_time > adjust_time){
+        /*if(miss_time > adjust_time){
             //TODO: lock
+            pthread_mutex_lock(&c->thread->stats.mutex);
             adjust_time = current_time;//TODO: define adjust_time
-            delta_time = (current_time - miss_time) * ALPHA; //TODO: define alpha
+            delta_time = (current_time - miss_time) * alpha; //TODO: define alpha
+            pthread_mutex_unlock(&c->thread->stats.mutex);
             //TODO: unlock        
-        }
+        }*/
         fprintf (stdout, "Gumball might have existed.");
     }
     
