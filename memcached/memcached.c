@@ -3004,30 +3004,20 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
 	    //TODO:unlock
     }*/
 
-    //int deduct = current_time - miss_time;
-    int index = current_time / 1000 % window_size;
-    if(current_time - last_judge > 1){
-	    for(int i = 0; i < window_size; i++){
-		    int sum_time += time[i];
-		    int sum_count += count[i];		
-	    }
-	    pthread_mutex_lock(&c->thread->stats.mutex);
-	    if(sum_time / sum_count * 3 * alpha < delta_time){
-		
-		    int temp = sum(time) / sum(count) * 3 * alpha;
-		    if(temp < delta_time) delta_time = temp;
-	    }
-	    last_judge = current_time;	
-	    time[index] = 0;
-	    count[index] = 0;
-	    pthread_mutex_unlock(&c->thread->stats.mutex);
-
+    int deduct = current_time - miss_time;
+    if(current_time - last_judge > 60000){
+        pthread_mutex_lock(&c->thread->stats.mutex);
+        last_judge = current_time;
+        if(time_sum / count * 3 * alpha < delta_time){
+            delta_time = average_time * 3 * aplha;  
+            time_sum = 0;
+            count = 0;  
+        }
+        
     }
     else{
-        pthread_mutex_lock(&c->thread->stats.mutex);        
-        time[index] += deduct;
-        count[index] ++;
-        pthread_mutex_unlock(&c->thread->stats.mutex);
+        time_sum += deduct;
+        count++;
     }
 
     /* Check the following cases */
