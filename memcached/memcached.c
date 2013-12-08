@@ -129,10 +129,18 @@ static const rel_time_t expire_time = 1;
 static const float alpha = 1.1;
 /* RT_MAX */
 gum_time_t RT_MAX = 500;
+
 /* adjust_time, used for delta adjustment */
 gum_time_t adjust_time = 0;
 /* last_judge, timestamp used for delta adjustment */
 gum_time_t last_judge = 0;
+
+static int window_size = 5;
+static int time[window_size];
+memset(time,0,window_size*sizeof(int));
+static int count[window_size];
+memset(count,0,window_size*sizeof(int));
+static int last_judge = 0;
 
 /* Implement get_system_time */
 static gum_time_t getSystemTime() {
@@ -2976,7 +2984,7 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
     }
     
 //TODO: need to define::: alpha = 1.1 , RT_MAX = 0, adjust_time, last_judge,
-    /*if(current_time - last_judge > 60){
+    /*if(current_time - last_judge > 60000){
         //TODO:lock
         pthread_mutex_lock(&c->thread->stats.mutex);
         last_judge = current_time;
@@ -2995,6 +3003,33 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
         pthread_mutex_unlock(&c->thread->stats.mutex);
 	    //TODO:unlock
     }*/
+
+    //int deduct = current_time - miss_time;
+    int index = current_time / 1000 % window_size;
+    if(current_time - last_judge > 1){
+	    for(int i = 0; i < window_size; i++){
+		    int sum_time += time[i];
+		    int sum_count += count[i];		
+	    }
+	    pthread_mutex_lock(&c->thread->stats.mutex);
+	    if(sum_time / sum_count * 3 * alpha < delta_time){
+		
+		    int temp = sum(time) / sum(count) * 3 * alpha;
+		    if(temp < delta_time) delta_time = temp;
+	    }
+	    last_judge = current_time;	
+	    time[index] = 0;
+	    count[index] = 0;
+	    pthread_mutex_unlock(&c->thread->stats.mutex);
+
+    }
+    else{
+        pthread_mutex_lock(&c->thread->stats.mutex);        
+        time[index] += deduct;
+        count[index] ++;
+        pthread_mutex_unlock(&c->thread->stats.mutex);
+    }
+
     /* Check the following cases */
     /* 1. Tc - Tmiss > delta */
     if (miss_time > current_time) //use >
