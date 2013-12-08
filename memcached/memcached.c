@@ -135,12 +135,9 @@ gum_time_t adjust_time = 0;
 /* last_judge, timestamp used for delta adjustment */
 gum_time_t last_judge = 0;
 
-static int window_size = 5;
-static int time[window_size];
-memset(time,0,window_size*sizeof(int));
-static int count[window_size];
-memset(count,0,window_size*sizeof(int));
-static int last_judge = 0;
+static const int window_size = 5;
+static int time_sum[5] = {0};
+static int count[5] = {0};
 
 /* Implement get_system_time */
 static gum_time_t getSystemTime() {
@@ -3004,28 +3001,30 @@ static void process_update_command(conn *c, token_t *tokens, const size_t ntoken
 	    //TODO:unlock
     }*/
 
-    //int deduct = current_time - miss_time;
+    int deduct = current_time - miss_time;
     int index = current_time / 1000 % window_size;
-    if(current_time - last_judge > 1){
+    if(current_time - last_judge > 1*1000){
+        int sum_time = 0;
+        int sum_count = 0;
 	    for(int i = 0; i < window_size; i++){
-		    int sum_time += time[i];
-		    int sum_count += count[i];		
+		    sum_time += time_sum[i];
+		    sum_count += count[i];
 	    }
 	    pthread_mutex_lock(&c->thread->stats.mutex);
 	    if(sum_time / sum_count * 3 * alpha < delta_time){
 		
-		    int temp = sum(time) / sum(count) * 3 * alpha;
+		    int temp = sum_time / sum_count * 3 * alpha;
 		    if(temp < delta_time) delta_time = temp;
 	    }
 	    last_judge = current_time;	
-	    time[index] = 0;
+	    time_sum[index] = 0;
 	    count[index] = 0;
 	    pthread_mutex_unlock(&c->thread->stats.mutex);
 
     }
     else{
         pthread_mutex_lock(&c->thread->stats.mutex);        
-        time[index] += deduct;
+        time_sum[index] += deduct;
         count[index] ++;
         pthread_mutex_unlock(&c->thread->stats.mutex);
     }
